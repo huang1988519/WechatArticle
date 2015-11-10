@@ -1,10 +1,16 @@
 PODS:
   - Alamofire (3.0.0-beta.3)
+  - Loggerithm (1.3)
+  - SnapKit (0.15.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0.0-beta.3)
+  - Loggerithm (~> 1.3)
+  - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: c89149e58431f6f94527e8c01f920456afe39bd0
+  Loggerithm: 23ec82a8f7907832758cb93f15c33a85de0ed99b
+  SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
 
 COCOAPODS: 0.39.0

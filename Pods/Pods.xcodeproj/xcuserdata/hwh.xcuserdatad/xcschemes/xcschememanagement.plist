@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Loggerithm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WechatArticle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B187B1783612F5E17A940C570A175E51</key>
+		<key>57EA3EBA7FD3BC4EDBAB616FD13E421F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C78611581A9395631F3621465D0728C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8037127B0A92076BB9A5F4CD10958D47</key>
 		<dict>
 			<key>primary</key>
 			<true/>

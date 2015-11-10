@@ -15,12 +15,9 @@
 		D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE11BEF648900569DC7 /* MenuController.swift */; };
 		D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE31BEF649C00569DC7 /* ViewController.swift */; };
 		D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */; };
-		D92E0DF21BF1A2B200569DC7 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DEB1BF1A2B200569DC7 /* BallView.swift */; };
-		D92E0DF31BF1A2B200569DC7 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DEC1BF1A2B200569DC7 /* BounceView.swift */; };
-		D92E0DF41BF1A2B200569DC7 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DEE1BF1A2B200569DC7 /* CGRectEx.swift */; };
-		D92E0DF51BF1A2B200569DC7 /* NSTimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DEF1BF1A2B200569DC7 /* NSTimerEx.swift */; };
-		D92E0DF61BF1A2B200569DC7 /* PullToBounceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DF01BF1A2B200569DC7 /* PullToBounceWrapper.swift */; };
-		D92E0DF71BF1A2B200569DC7 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DF11BF1A2B200569DC7 /* WaveView.swift */; };
+		D92E0E281BF1E46900569DC7 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */; };
+		D92E0E291BF1E46900569DC7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E0E271BF1E46900569DC7 /* Result.framework */; };
+		D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2D1BF2025300569DC7 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +33,11 @@
 		D92E0DE11BEF648900569DC7 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D92E0DE31BEF649C00569DC7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
-		D92E0DEB1BF1A2B200569DC7 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
-		D92E0DEC1BF1A2B200569DC7 /* BounceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
-		D92E0DEE1BF1A2B200569DC7 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
-		D92E0DEF1BF1A2B200569DC7 /* NSTimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerEx.swift; sourceTree = "<group>"; };
-		D92E0DF01BF1A2B200569DC7 /* PullToBounceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceWrapper.swift; sourceTree = "<group>"; };
-		D92E0DF11BF1A2B200569DC7 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		D92E0DF81BF1DD5500569DC7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D92E0DFA1BF1DDA100569DC7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		D92E0E271BF1E46900569DC7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		D92E0E2D1BF2025300569DC7 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92E0E281BF1E46900569DC7 /* ReactiveCocoa.framework in Frameworks */,
+				D92E0E291BF1E46900569DC7 /* Result.framework in Frameworks */,
 				2C0762A494A40FBE77AF2348 /* Pods_WechatArticle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +66,10 @@
 		8D327C367679F0FF7DCF8D57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */,
+				D92E0E271BF1E46900569DC7 /* Result.framework */,
+				D92E0DFA1BF1DDA100569DC7 /* libsqlite3.tbd */,
+				D92E0DF81BF1DD5500569DC7 /* libsqlite3.0.tbd */,
 				8CD4CAE123AA1EFA3D0C574C /* Pods_WechatArticle.framework */,
 			);
 			name = Frameworks;
@@ -94,6 +96,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D92E0E2C1BF2025300569DC7 /* Network */,
 				D92E0DE51BEF6D9400569DC7 /* Library */,
 				D92E0DDF1BEF645C00569DC7 /* Controller */,
 				D92E0DCD1BEF4C9800569DC7 /* AppDelegate.swift */,
@@ -125,31 +128,17 @@
 		D92E0DE51BEF6D9400569DC7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				D92E0DEA1BF1A2B200569DC7 /* PullToBounce */,
 				D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
 		};
-		D92E0DEA1BF1A2B200569DC7 /* PullToBounce */ = {
+		D92E0E2C1BF2025300569DC7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D92E0DEB1BF1A2B200569DC7 /* BallView.swift */,
-				D92E0DEC1BF1A2B200569DC7 /* BounceView.swift */,
-				D92E0DED1BF1A2B200569DC7 /* helper */,
-				D92E0DF01BF1A2B200569DC7 /* PullToBounceWrapper.swift */,
-				D92E0DF11BF1A2B200569DC7 /* WaveView.swift */,
+				D92E0E2D1BF2025300569DC7 /* Request.swift */,
 			);
-			path = PullToBounce;
-			sourceTree = "<group>";
-		};
-		D92E0DED1BF1A2B200569DC7 /* helper */ = {
-			isa = PBXGroup;
-			children = (
-				D92E0DEE1BF1A2B200569DC7 /* CGRectEx.swift */,
-				D92E0DEF1BF1A2B200569DC7 /* NSTimerEx.swift */,
-			);
-			path = helper;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,16 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92E0DF61BF1A2B200569DC7 /* PullToBounceWrapper.swift in Sources */,
-				D92E0DF71BF1A2B200569DC7 /* WaveView.swift in Sources */,
-				D92E0DF31BF1A2B200569DC7 /* BounceView.swift in Sources */,
-				D92E0DF51BF1A2B200569DC7 /* NSTimerEx.swift in Sources */,
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
+				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
 				D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */,
-				D92E0DF21BF1A2B200569DC7 /* BallView.swift in Sources */,
 				D92E0DCE1BEF4C9800569DC7 /* AppDelegate.swift in Sources */,
-				D92E0DF41BF1A2B200569DC7 /* CGRectEx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,8 +379,14 @@
 			baseConfigurationReference = 6F8B06EC530B8CDDBF7EBFF2 /* Pods-WechatArticle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = hwh.WechatArticle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -407,8 +397,14 @@
 			baseConfigurationReference = 1EE109E5A0A1E50C600EB3A7 /* Pods-WechatArticle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = hwh.WechatArticle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

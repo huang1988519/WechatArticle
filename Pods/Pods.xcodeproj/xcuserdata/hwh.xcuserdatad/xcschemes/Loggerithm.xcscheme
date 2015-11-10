@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0CB5E6DD453F1BA0E313F459'
-               BlueprintName = 'Pods-WechatArticle'
+               BlueprintIdentifier = 'DB73C90AA07AF99EC877CF13'
+               BlueprintName = 'Loggerithm'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_WechatArticle.framework'>
+               BuildableName = 'Loggerithm.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
