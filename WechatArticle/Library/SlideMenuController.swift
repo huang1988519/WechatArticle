@@ -16,7 +16,7 @@ public struct SlideMenuOptions {
     public static var shadowRadius: CGFloat = 0.0
     public static var shadowOffset: CGSize = CGSizeMake(0,0)
     public static var panFromBezel: Bool = true
-    public static var animationDuration: CGFloat = 0.4
+    public static var animationDuration: CGFloat = 0.3
     public static var rightViewWidth: CGFloat = 270.0
     public static var rightBezelWidth: CGFloat = 16.0
     public static var rightPanFromBezel: Bool = true
@@ -435,7 +435,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
     
         addShadowToView(rightContainerView)
     
-        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
+        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.rightContainerView.frame = frame
                 strongSelf.opacityView.layer.opacity = Float(SlideMenuOptions.contentViewOpacity)
@@ -463,7 +463,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
             duration = Double(fmax(0.1, fmin(1.0, duration)))
         }
         
-        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
+        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.leftContainerView.frame = frame
                 strongSelf.opacityView.layer.opacity = 0.0
@@ -493,7 +493,7 @@ public class SlideMenuController: UIViewController, UIGestureRecognizerDelegate 
             duration = Double(fmax(0.1, fmin(1.0, duration)))
         }
     
-        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { [weak self]() -> Void in
+        UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { [weak self]() -> Void in
             if let strongSelf = self {
                 strongSelf.rightContainerView.frame = frame
                 strongSelf.opacityView.layer.opacity = 0.0
