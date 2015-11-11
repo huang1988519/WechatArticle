@@ -15,9 +15,9 @@
 		D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE11BEF648900569DC7 /* MenuController.swift */; };
 		D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE31BEF649C00569DC7 /* ViewController.swift */; };
 		D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */; };
-		D92E0E281BF1E46900569DC7 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */; };
-		D92E0E291BF1E46900569DC7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E0E271BF1E46900569DC7 /* Result.framework */; };
 		D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2D1BF2025300569DC7 /* Request.swift */; };
+		D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2F1BF3392500569DC7 /* HotRequest.swift */; };
+		D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +38,8 @@
 		D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D92E0E271BF1E46900569DC7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D92E0E2D1BF2025300569DC7 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D92E0E2F1BF3392500569DC7 /* HotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRequest.swift; sourceTree = "<group>"; };
+		D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92E0E281BF1E46900569DC7 /* ReactiveCocoa.framework in Frameworks */,
-				D92E0E291BF1E46900569DC7 /* Result.framework in Frameworks */,
 				2C0762A494A40FBE77AF2348 /* Pods_WechatArticle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +96,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D92E0E311BF33EE100569DC7 /* ViewModel */,
 				D92E0E2C1BF2025300569DC7 /* Network */,
 				D92E0DE51BEF6D9400569DC7 /* Library */,
 				D92E0DDF1BEF645C00569DC7 /* Controller */,
@@ -137,8 +138,17 @@
 			isa = PBXGroup;
 			children = (
 				D92E0E2D1BF2025300569DC7 /* Request.swift */,
+				D92E0E2F1BF3392500569DC7 /* HotRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D92E0E311BF33EE100569DC7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +276,8 @@
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
+				D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */,
+				D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */,
 				D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */,
 				D92E0DCE1BEF4C9800569DC7 /* AppDelegate.swift in Sources */,
 			);

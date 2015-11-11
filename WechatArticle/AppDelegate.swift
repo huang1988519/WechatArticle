@@ -8,7 +8,6 @@
 
 import UIKit
 import Loggerithm
-import ReactiveCocoa
 
 var log = Loggerithm()
 

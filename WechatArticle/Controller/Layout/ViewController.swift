@@ -16,6 +16,7 @@ class ViewController:
     @IBOutlet weak var mCollectionView: UICollectionView!
 
     static var token :dispatch_once_t = 0
+    let model =  HotViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
