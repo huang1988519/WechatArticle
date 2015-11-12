@@ -11,9 +11,9 @@ import PushKit
 import SnapKit
 
 class ViewController:
-    UIViewController,MenuItemSelectDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    UIViewController,MenuItemSelectDelegate{
     
-    @IBOutlet weak var mCollectionView: UICollectionView!
+    @IBOutlet weak var containerView: UIView!
     
     var hotController: HotController!
     var catogariesController: CatogariesController!
@@ -27,10 +27,19 @@ class ViewController:
         hotController = HotController.Nib()
         catogariesController = CatogariesController.Nib()
         
-        self.addChildViewController(hotController)
-        self.addChildViewController(catogariesController)
-        
         setUpViews()
+    }
+    // 切换到 热点视图
+    func showHotController() {
+        self.addChildViewController(hotController)
+        containerView.addSubview(hotController.view)
+        hotController.didMoveToParentViewController(self)
+    }
+    // 切换到 全部类目视图
+    func showCategoryController() {
+        self.addChildViewController(catogariesController)
+        containerView.addSubview(catogariesController.view)
+        catogariesController.didMoveToParentViewController(self)
     }
     /**
      创建视图
@@ -45,33 +54,6 @@ class ViewController:
      */
     @IBAction func click(sender: AnyObject) {
         self.slideMenuController()?.openLeft()
-    }
-    //MARK: - colectionview Datasource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-        if indexPath.row == 0 {
-            cell.contentView.addSubview(hotController.view)
-            hotController.view.frame = cell.contentView.bounds
-        }
-        if indexPath.row == 1 {
-            cell.contentView.addSubview(catogariesController.view)
-            catogariesController.view.frame = cell.contentView.bounds
-        }
-        return cell
-    }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        mCollectionView.layoutIfNeeded()
-        let bodyRect = mCollectionView.frame
-        
-        return bodyRect.size
-    }
-    func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        log.debug(indexPath)
     }
 }
 

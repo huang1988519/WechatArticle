@@ -21,6 +21,7 @@
 		D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE01BF4680E00775A6D /* Tool.swift */; };
 		D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE31BF46E5500775A6D /* HotController.swift */; };
 		D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */; };
+		D9B1E75E1BF4A80100B420FE /* PresentTransiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E75D1BF4A80100B420FE /* PresentTransiton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D9ACFDE31BF46E5500775A6D /* HotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotController.swift; sourceTree = "<group>"; };
 		D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
 		D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatogariesController.swift; sourceTree = "<group>"; };
+		D9B1E75D1BF4A80100B420FE /* PresentTransiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTransiton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D9B1E75C1BF4A7E700B420FE /* Transform */,
 				D9ACFDDF1BF4680200775A6D /* Global */,
 				D92E0E311BF33EE100569DC7 /* ViewModel */,
 				D92E0E2C1BF2025300569DC7 /* Network */,
@@ -176,6 +179,14 @@
 				D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */,
 			);
 			path = Catogaries;
+			sourceTree = "<group>";
+		};
+		D9B1E75C1BF4A7E700B420FE /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1E75D1BF4A80100B420FE /* PresentTransiton.swift */,
+			);
+			path = Transform;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B1E75E1BF4A80100B420FE /* PresentTransiton.swift in Sources */,
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
 				D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
