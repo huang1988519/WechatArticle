@@ -14,9 +14,14 @@ class HotRequest: Request {
         urlPath = Request_Path.goodArticles
     }
     override func handleResult() -> AnyObject? {
-        if let _jsonObject = jsonObject {
-            log.verbose(_jsonObject)
+        super.handleResult()
+        
+        if let dic = resultObject {
+            log.debug(resultObject)
+            if let list = dic["typeList"] {
+                resultObject = list
+            }
         }
-        return jsonObject
+        return resultObject
     }
 }

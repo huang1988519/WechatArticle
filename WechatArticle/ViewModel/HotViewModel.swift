@@ -9,21 +9,39 @@
 import UIKit
 import RxSwift
 
+typealias CompleteHandle = (result: AnyObject?, error:String?) -> Void
 
 class HotViewModel: NSObject {
     let request = HotRequest()
-
+    
+    
     override init() {
         super.init()
-        
-        loadViewModel()
     }
     deinit {
+        log.debug("%p", args: request)
         log.warning("消除")
     }
     
-    func loadViewModel() {
-        request.start()
-        
+    func requestList(start :()->(),comleteBlock:CompleteHandle?) {
+        request.request(
+            { (data) -> Void in
+                log.verbose(data)
+                if let _comBlock = comleteBlock {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            _comBlock(result: data, error: nil)
+                    })
+                }
+            
+            }) { (msg) -> Void in
+                
+                log.error(msg)
+                alertWithMsg(msg)
+                if let _comBlock = comleteBlock {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        _comBlock(result: nil, error: msg)
+                    })
+                }
+        }
     }
 }

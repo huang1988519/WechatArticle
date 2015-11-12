@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C0762A494A40FBE77AF2348 /* Pods_WechatArticle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD4CAE123AA1EFA3D0C574C /* Pods_WechatArticle.framework */; };
+		BAEFE1429051CEA8D2EC5689 /* Pods_WechatArticle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0152EBD697E91F5F41FB520C /* Pods_WechatArticle.framework */; };
 		D92E0DCE1BEF4C9800569DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0DCD1BEF4C9800569DC7 /* AppDelegate.swift */; };
 		D92E0DD31BEF4C9800569DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92E0DD11BEF4C9800569DC7 /* Main.storyboard */; };
 		D92E0DD51BEF4C9800569DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92E0DD41BEF4C9800569DC7 /* Assets.xcassets */; };
@@ -18,12 +18,15 @@
 		D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2D1BF2025300569DC7 /* Request.swift */; };
 		D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2F1BF3392500569DC7 /* HotRequest.swift */; };
 		D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */; };
+		D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE01BF4680E00775A6D /* Tool.swift */; };
+		D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE31BF46E5500775A6D /* HotController.swift */; };
+		D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0152EBD697E91F5F41FB520C /* Pods_WechatArticle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatArticle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE109E5A0A1E50C600EB3A7 /* Pods-WechatArticle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatArticle.release.xcconfig"; path = "Pods/Target Support Files/Pods-WechatArticle/Pods-WechatArticle.release.xcconfig"; sourceTree = "<group>"; };
 		6F8B06EC530B8CDDBF7EBFF2 /* Pods-WechatArticle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatArticle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WechatArticle/Pods-WechatArticle.debug.xcconfig"; sourceTree = "<group>"; };
-		8CD4CAE123AA1EFA3D0C574C /* Pods_WechatArticle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatArticle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92E0DCA1BEF4C9800569DC7 /* WechatArticle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WechatArticle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92E0DCD1BEF4C9800569DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92E0DD21BEF4C9800569DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,13 +36,13 @@
 		D92E0DE11BEF648900569DC7 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D92E0DE31BEF649C00569DC7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
-		D92E0DF81BF1DD5500569DC7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		D92E0DFA1BF1DDA100569DC7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
-		D92E0E271BF1E46900569DC7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D92E0E2D1BF2025300569DC7 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D92E0E2F1BF3392500569DC7 /* HotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRequest.swift; sourceTree = "<group>"; };
 		D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewModel.swift; sourceTree = "<group>"; };
+		D9ACFDE01BF4680E00775A6D /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		D9ACFDE31BF46E5500775A6D /* HotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotController.swift; sourceTree = "<group>"; };
+		D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
+		D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatogariesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C0762A494A40FBE77AF2348 /* Pods_WechatArticle.framework in Frameworks */,
+				BAEFE1429051CEA8D2EC5689 /* Pods_WechatArticle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,11 +69,7 @@
 		8D327C367679F0FF7DCF8D57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D92E0E261BF1E46900569DC7 /* ReactiveCocoa.framework */,
-				D92E0E271BF1E46900569DC7 /* Result.framework */,
-				D92E0DFA1BF1DDA100569DC7 /* libsqlite3.tbd */,
-				D92E0DF81BF1DD5500569DC7 /* libsqlite3.0.tbd */,
-				8CD4CAE123AA1EFA3D0C574C /* Pods_WechatArticle.framework */,
+				0152EBD697E91F5F41FB520C /* Pods_WechatArticle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,6 +95,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D9ACFDDF1BF4680200775A6D /* Global */,
 				D92E0E311BF33EE100569DC7 /* ViewModel */,
 				D92E0E2C1BF2025300569DC7 /* Network */,
 				D92E0DE51BEF6D9400569DC7 /* Library */,
@@ -105,6 +105,7 @@
 				D92E0DD41BEF4C9800569DC7 /* Assets.xcassets */,
 				D92E0DD61BEF4C9800569DC7 /* LaunchScreen.storyboard */,
 				D92E0DD91BEF4C9800569DC7 /* Info.plist */,
+				D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */,
 			);
 			path = WechatArticle;
 			sourceTree = "<group>";
@@ -112,6 +113,8 @@
 		D92E0DDF1BEF645C00569DC7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D9ACFDEB1BF484EF00775A6D /* Catogaries */,
+				D9ACFDE21BF46E3F00775A6D /* Hot */,
 				D92E0DE01BEF647700569DC7 /* Layout */,
 			);
 			path = Controller;
@@ -149,6 +152,30 @@
 				D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D9ACFDDF1BF4680200775A6D /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D9ACFDE01BF4680E00775A6D /* Tool.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		D9ACFDE21BF46E3F00775A6D /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				D9ACFDE31BF46E5500775A6D /* HotController.swift */,
+			);
+			path = Hot;
+			sourceTree = "<group>";
+		};
+		D9ACFDEB1BF484EF00775A6D /* Catogaries */ = {
+			isa = PBXGroup;
+			children = (
+				D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */,
+			);
+			path = Catogaries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
+				D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
+				D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */,
+				D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */,
 				D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */,
 				D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */,
 				D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */,

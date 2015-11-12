@@ -7,42 +7,47 @@
 //
 
 import UIKit
-import RxSwift
 
 enum REQUEST_TYPE: Int {
     case Get
     case Post
 }
-enum ResponseStatus: Int {
-    case Start      //请求开始
-    case Requesting //请求中。。。
-    case Failed     //请求失败
-    case Sucess     //请求成功
-    
-    case Suspend    //请求暂停
-    case Resume     //请求重新开始
-}
+//enum ResponseStatus: Int {
+//    case Wait       //未启动
+//    case Start      //请求开始
+//    case Requesting //请求中。。。
+//    case Failed     //请求失败
+//    case Sucess     //请求成功
+//    
+//    case Suspend    //请求暂停
+//    case Resume     //请求重新开始
+//}
 public struct Request_Path {
     static let detail_list  = "weixin_num_list"     //详情列表（关键字搜索）
     static let type_list    = "winxin_num_type"     //类型列表
     static let goodArticle  = "weixin_article_list" //精选
     static let goodArticles = "weixin_article_type" //文章_微信精选文章类别
 }
+
+typealias SucessHandle = (data:AnyObject?) -> Void
+typealias FaildHandle  = (msg: String!)    -> Void
+
 public class Request: NSObject {
     private var BASEURL = "http://apis.baidu.com/showapi_open_bus/weixin/"
     var methed  = REQUEST_TYPE.Get
     public var urlPath = Request_Path.detail_list
 
     private var respondeData  : NSData?
-    private var respondeString: String?
-    internal var jsonObject    :AnyObject?
-    
     internal var resultObject:AnyObject?
     
     let session = NSURLSession.sharedSession()
     var task: NSURLSessionTask?
     
-    var state: Variable<ResponseStatus>?
+//    var state: Variable<ResponseStatus> = Variable(.Wait)
+    
+    var _successBlock:SucessHandle?
+    var _faildBlock  :FaildHandle?
+    
     deinit {
         log.warning("消除")
     }
@@ -50,7 +55,13 @@ public class Request: NSObject {
     func configRequest() {
         log.verbose("配置 request")
     }
-    func start() {
+    func request(sucessBlock: SucessHandle , faildBlock:FaildHandle) {
+        _successBlock = sucessBlock
+        _faildBlock   = faildBlock
+        
+        start()
+    }
+    private func start() {
         configRequest()
         
         let url = generateUrl()
@@ -67,19 +78,29 @@ public class Request: NSObject {
             
             if let _err = error {
                 log.error(_err)
-                strongSelf?.state = Variable(.Failed)
+//                strongSelf?.state = Variable(.Failed)
+                self!._faildBlock!(msg: "网络失败\n\(_err.description)")
                 return
             }else{
-                strongSelf?.handleSucess(data!)
-                strongSelf?.handleResult()
+                let (result,errorMsg) = (strongSelf?.dealWithResult(data!))!
                 
-                strongSelf?.state = Variable(.Sucess)
+                if errorMsg != nil {
+                    self?._faildBlock!(msg: errorMsg)
+                }else{
+                    self!.resultObject = result
+                    
+                    strongSelf?.handleResult()
+                    
+                    self?._successBlock!(data: self?.resultObject)
+                }
             }
             
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
         task?.resume()
-        
-        state = Variable(.Start)
+
+//        state = Variable(.Start)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }
     func resume() {
         if let _task = task {
@@ -97,21 +118,40 @@ public class Request: NSObject {
         }
         task = nil
     }
-    private func handleSucess(data:NSData) {
+    func dealWithResult(data: NSData) -> (reuslt:AnyObject?, errorMsg: String?) {
+        
         respondeData = data
-        respondeString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
-
+        
         do {
-            try jsonObject = NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            resultObject = jsonObject //默认 结果不做处理，= json object
-            log.verbose("结果:\(resultObject)")
+            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            if let dic = (object as? [String: AnyObject]) {
+                if let code = (dic["showapi_res_code"] as? NSNumber) {
+                    if code == 0{
+                        let result = dic["showapi_res_body"] as? [String:AnyObject]
+                        return (result,nil)
+                    }else{
+                        let errorMsg = dic["showapi_res_error"] as? String
+                        return (nil, errorMsg)
+                    }
+                }else {
+                    return (nil,"json 结构不对，请开发者检查返回格式是否正确")
+                }
+            }else {
+                return (nil,"返回结果不是字典格式")
+            }
+            
         }catch {
             log.error(error)
+            return (nil,"json 解析错误")
         }
-        
     }
     //重写此方法，处理返回 结果
     func handleResult() -> AnyObject? {
+        if let dic = resultObject as? [String:AnyObject] {
+            if let list = dic["typeList"] {
+                resultObject = list
+            }
+        }
         return resultObject
     }
     //MARK: -

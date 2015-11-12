@@ -88,10 +88,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-WechatArticle/Loggerithm.framework"
   install_framework "Pods-WechatArticle/RxSwift.framework"
   install_framework "Pods-WechatArticle/SnapKit.framework"
+  install_framework "Pods-WechatArticle/Spring.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-WechatArticle/Alamofire.framework"
   install_framework "Pods-WechatArticle/Loggerithm.framework"
   install_framework "Pods-WechatArticle/RxSwift.framework"
   install_framework "Pods-WechatArticle/SnapKit.framework"
+  install_framework "Pods-WechatArticle/Spring.framework"
 fi
