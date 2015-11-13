@@ -79,19 +79,24 @@ public class Request: NSObject {
             if let _err = error {
                 log.error(_err)
 //                strongSelf?.state = Variable(.Failed)
-                self!._faildBlock!(msg: "网络失败\n\(_err.description)")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self!._faildBlock!(msg: "网络失败\n\(_err.description)")
+                    })
                 return
             }else{
                 let (result,errorMsg) = (strongSelf?.dealWithResult(data!))!
                 
                 if errorMsg != nil {
-                    self?._faildBlock!(msg: errorMsg)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self?._faildBlock!(msg: errorMsg)
+                    })
                 }else{
                     self!.resultObject = result
                     
                     strongSelf?.handleResult()
-                    
-                    self?._successBlock!(data: self?.resultObject)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self?._successBlock!(data: self?.resultObject)
+                    })
                 }
             }
             
@@ -174,9 +179,9 @@ public class Request: NSObject {
         
         for var i = 0 ; i < Int(count); i++ {
             let property = properties[i]
-            let key = NSString(CString: property_getName(property), encoding: NSUTF8StringEncoding)
+            let key = NSString(CString: property_getName(property), encoding: NSUTF8StringEncoding)!
             
-            if let value = valueForKey(String(key)) {
+            if let value = valueForKey("\(key)") {
                 log.verbose("\(key) = \(value)")
                 paras[String(key)] = value
             }

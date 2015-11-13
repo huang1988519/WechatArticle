@@ -12,6 +12,10 @@ import UIKit
 func App() -> AppDelegate {
     return (UIApplication.sharedApplication().delegate as? AppDelegate)!
 }
+func MainSB() -> UIStoryboard {
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+    return sb
+}
 // 全局提示框
 func alertWithMsg(msg: String) {
     let alert = UIAlertController(title: "提示", message: msg, preferredStyle: .Alert)
