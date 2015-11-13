@@ -25,6 +25,7 @@
 		D9B1E7611BF59BC700B420FE /* ArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7601BF59BC700B420FE /* ArticleController.swift */; };
 		D9B1E7631BF5BA3D00B420FE /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7621BF5BA3D00B420FE /* ArticleListController.swift */; };
 		D9B1E7651BF5BC6C00B420FE /* ArticleListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7641BF5BC6C00B420FE /* ArticleListRequest.swift */; };
+		D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7681BF603C300B420FE /* HotCategoryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		D9B1E7601BF59BC700B420FE /* ArticleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleController.swift; sourceTree = "<group>"; };
 		D9B1E7621BF5BA3D00B420FE /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		D9B1E7641BF5BC6C00B420FE /* ArticleListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListRequest.swift; sourceTree = "<group>"; };
+		D9B1E7681BF603C300B420FE /* HotCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotCategoryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D9ACFDE31BF46E5500775A6D /* HotController.swift */,
+				D9B1E7681BF603C300B420FE /* HotCategoryController.swift */,
 			);
 			path = Hot;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			files = (
 				D9B1E75E1BF4A80100B420FE /* PresentTransiton.swift in Sources */,
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
+				D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */,
 				D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,

@@ -21,7 +21,7 @@ struct Result {
     var totalNumber = 0
     var list:[[String:AnyObject]]?
 }
-class ArticleListController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ArticleListController: UIViewController,UITableViewDataSource,UITableViewDelegate ,UIViewControllerTransitioningDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +31,9 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     var inputDic:[String: AnyObject]?
     var resultModel = Result()
     
-    
+    lazy var presentAnimation:TransitionZoom = {
+        return TransitionZoom()
+    }()
     
     
     //MARK: -
@@ -98,6 +100,15 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         
         let detailVC = ArticleController.Nib()
         detailVC.inputDic = node
+        detailVC.transitioningDelegate = self
         self.presentViewController(detailVC, animated: true, completion: nil)
     }
+    //MARK: -- Animatin Transition
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentAnimation.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
+    }
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentAnimation.animationControllerForDismissedController(dismissed)
+    }
+
 }
