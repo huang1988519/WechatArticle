@@ -8,6 +8,8 @@
 
 import UIKit
 import Loggerithm
+import Fabric
+import Crashlytics
 
 var log = Loggerithm()
 
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.showFunctionName = true
         log.showDateTime     = false
         log.verboseColor = UIColor.darkGrayColor()
+        //配置 崩溃 日志
+        Fabric.with([Crashlytics.self])
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

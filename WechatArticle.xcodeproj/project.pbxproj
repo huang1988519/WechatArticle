@@ -26,6 +26,8 @@
 		D9B1E7631BF5BA3D00B420FE /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7621BF5BA3D00B420FE /* ArticleListController.swift */; };
 		D9B1E7651BF5BC6C00B420FE /* ArticleListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7641BF5BC6C00B420FE /* ArticleListRequest.swift */; };
 		D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7681BF603C300B420FE /* HotCategoryController.swift */; };
+		D9B1E76D1BF9869B00B420FE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1E76B1BF9869B00B420FE /* Fabric.framework */; };
+		D9B1E76E1BF9869B00B420FE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B1E76C1BF9869B00B420FE /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		D9B1E7621BF5BA3D00B420FE /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		D9B1E7641BF5BC6C00B420FE /* ArticleListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListRequest.swift; sourceTree = "<group>"; };
 		D9B1E7681BF603C300B420FE /* HotCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotCategoryController.swift; sourceTree = "<group>"; };
+		D9B1E76B1BF9869B00B420FE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D9B1E76C1BF9869B00B420FE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAEFE1429051CEA8D2EC5689 /* Pods_WechatArticle.framework in Frameworks */,
+				D9B1E76E1BF9869B00B420FE /* Crashlytics.framework in Frameworks */,
+				D9B1E76D1BF9869B00B420FE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,8 @@
 		8D327C367679F0FF7DCF8D57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9B1E76B1BF9869B00B420FE /* Fabric.framework */,
+				D9B1E76C1BF9869B00B420FE /* Crashlytics.framework */,
 				0152EBD697E91F5F41FB520C /* Pods_WechatArticle.framework */,
 			);
 			name = Frameworks;
@@ -222,6 +230,7 @@
 				D92E0DC81BEF4C9800569DC7 /* Resources */,
 				2C5031E095FAA4D1F2BF35E4 /* Embed Pods Frameworks */,
 				7EFC25AA14341065E46F7C1D /* Copy Pods Resources */,
+				D9B1E76A1BF9867200B420FE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -323,6 +332,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WechatArticle/Pods-WechatArticle-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D9B1E76A1BF9867200B420FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 7b302e714d8e9158a51f5a96fbe1113a28d14e2d 839529ed6053afc5e181b7dda84434a950953bb115d9c661fca7c2f29fa8a32c";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -461,6 +483,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -479,6 +502,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/Carthage/Checkouts/Result/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
