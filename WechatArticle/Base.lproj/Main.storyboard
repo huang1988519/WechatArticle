@@ -500,11 +500,11 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMo-mU-baH">
                                                     <rect key="frame" x="8" y="8" width="584" height="83.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzB-gQ-IWq">
-                                                            <rect key="frame" x="20" y="33" width="42" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzB-gQ-IWq">
+                                                            <rect key="frame" x="498" y="48" width="65.5" height="30"/>
                                                             <animations/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="0.28029983108108109" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -512,10 +512,10 @@
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="MzB-gQ-IWq" secondAttribute="bottom" constant="30" id="LNx-95-Y74"/>
-                                                        <constraint firstItem="MzB-gQ-IWq" firstAttribute="leading" secondItem="PMo-mU-baH" secondAttribute="leading" constant="20" id="Oa4-id-3X8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MzB-gQ-IWq" secondAttribute="bottom" constant="5" id="LNx-95-Y74"/>
+                                                        <constraint firstItem="MzB-gQ-IWq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PMo-mU-baH" secondAttribute="leading" constant="20" id="Oa4-id-3X8"/>
                                                         <constraint firstItem="MzB-gQ-IWq" firstAttribute="centerY" secondItem="PMo-mU-baH" secondAttribute="centerY" id="PKt-9W-zNu"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MzB-gQ-IWq" secondAttribute="trailing" constant="20" id="szs-HN-1cP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MzB-gQ-IWq" secondAttribute="trailing" constant="20" id="szs-HN-1cP"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">

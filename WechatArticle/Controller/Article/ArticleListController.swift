@@ -47,16 +47,20 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
             request.typeId = Int(_id)!
         }
         
-        
-        delay(2) { () -> () in
-            self.startReqeust()
-        }
+        startReqeust()
     }
     func startReqeust() {
+        
+        self.showHUD()
         request.request({ [unowned self](data) -> Void in
             log.debug(data)
+            
+            self.hideHUD()
+
             self.unpackageResult(data)
+            
             }) { (msg) -> Void in
+                
                 alertWithMsg(msg)
         }
     }
