@@ -84,6 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${PODS_ROOT}/AVOSCloudCrashReportingDynamic/iOS/release-v3.1.4/AVOSCloudCrashReporting/Dynamic/AVOSCloudCrashReporting.framework"
+  install_framework "${PODS_ROOT}/AVOSCloudDynamic/iOS/release-v3.1.4/AVOSCloud/Dynamic/AVOSCloud.framework"
   install_framework "Pods-WechatArticle/Alamofire.framework"
   install_framework "Pods-WechatArticle/Loggerithm.framework"
   install_framework "Pods-WechatArticle/RxSwift.framework"
@@ -91,6 +93,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-WechatArticle/Spring.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${PODS_ROOT}/AVOSCloudCrashReportingDynamic/iOS/release-v3.1.4/AVOSCloudCrashReporting/Dynamic/AVOSCloudCrashReporting.framework"
+  install_framework "${PODS_ROOT}/AVOSCloudDynamic/iOS/release-v3.1.4/AVOSCloud/Dynamic/AVOSCloud.framework"
   install_framework "Pods-WechatArticle/Alamofire.framework"
   install_framework "Pods-WechatArticle/Loggerithm.framework"
   install_framework "Pods-WechatArticle/RxSwift.framework"

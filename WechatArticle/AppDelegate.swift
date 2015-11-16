@@ -10,6 +10,7 @@ import UIKit
 import Loggerithm
 import Fabric
 import Crashlytics
+import AVOSCloud
 
 var log = Loggerithm()
 
@@ -25,20 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.verboseColor = UIColor.darkGrayColor()
         //配置 崩溃 日志
         Fabric.with([Crashlytics.self])
+        //配置 leanCloud
+        AVOSCloud.setApplicationId("qfrsSEumQvfkvyR7gMSXErKg", clientKey: "nTSTQrCGKDFm9zQoexAJHhGW")
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         config()
-
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        let mainVC = sb.instantiateViewControllerWithIdentifier("Main")
-        let menuVC = sb.instantiateViewControllerWithIdentifier("Left")
-        
-        let root = SlideMenuController(mainViewController: mainVC, leftMenuViewController: menuVC)
-        
-        self.window?.rootViewController = root
-        self.window?.makeKeyAndVisible()
         
         return true
     }

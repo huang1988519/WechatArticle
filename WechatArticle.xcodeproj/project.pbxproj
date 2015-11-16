@@ -18,6 +18,20 @@
 		D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2D1BF2025300569DC7 /* Request.swift */; };
 		D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E2F1BF3392500569DC7 /* HotRequest.swift */; };
 		D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */; };
+		D95C23E91BF9E82200A1F892 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23DB1BF9E82200A1F892 /* ArrayEx.swift */; };
+		D95C23EA1BF9E82200A1F892 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23DC1BF9E82200A1F892 /* CGPointEx.swift */; };
+		D95C23EB1BF9E82200A1F892 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23DD1BF9E82200A1F892 /* CGRectEx.swift */; };
+		D95C23EC1BF9E82200A1F892 /* CircularGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23DE1BF9E82200A1F892 /* CircularGradientLayer.swift */; };
+		D95C23ED1BF9E82200A1F892 /* LiquidCircleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23DF1BF9E82200A1F892 /* LiquidCircleEffect.swift */; };
+		D95C23EE1BF9E82200A1F892 /* LiquidLineEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E01BF9E82200A1F892 /* LiquidLineEffect.swift */; };
+		D95C23EF1BF9E82200A1F892 /* LiquidLoadEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E11BF9E82200A1F892 /* LiquidLoadEffect.swift */; };
+		D95C23F01BF9E82200A1F892 /* LiquidLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E21BF9E82200A1F892 /* LiquidLoader.swift */; };
+		D95C23F11BF9E82200A1F892 /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E31BF9E82200A1F892 /* LiquidUtil.swift */; };
+		D95C23F21BF9E82200A1F892 /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E41BF9E82200A1F892 /* LiquittableCircle.swift */; };
+		D95C23F31BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E51BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift */; };
+		D95C23F41BF9E82200A1F892 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E61BF9E82200A1F892 /* UIColorEx.swift */; };
+		D95C23F51BF9E82200A1F892 /* UIView+Grow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23E71BF9E82200A1F892 /* UIView+Grow.swift */; };
+		D95C23F81BF9F61500A1F892 /* HUD+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23F71BF9F61500A1F892 /* HUD+UIViewController.swift */; };
 		D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE01BF4680E00775A6D /* Tool.swift */; };
 		D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE31BF46E5500775A6D /* HotController.swift */; };
 		D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */; };
@@ -46,6 +60,20 @@
 		D92E0E2D1BF2025300569DC7 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D92E0E2F1BF3392500569DC7 /* HotRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotRequest.swift; sourceTree = "<group>"; };
 		D92E0E321BF33F0A00569DC7 /* HotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewModel.swift; sourceTree = "<group>"; };
+		D95C23DB1BF9E82200A1F892 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		D95C23DC1BF9E82200A1F892 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		D95C23DD1BF9E82200A1F892 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		D95C23DE1BF9E82200A1F892 /* CircularGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGradientLayer.swift; sourceTree = "<group>"; };
+		D95C23DF1BF9E82200A1F892 /* LiquidCircleEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidCircleEffect.swift; sourceTree = "<group>"; };
+		D95C23E01BF9E82200A1F892 /* LiquidLineEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLineEffect.swift; sourceTree = "<group>"; };
+		D95C23E11BF9E82200A1F892 /* LiquidLoadEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLoadEffect.swift; sourceTree = "<group>"; };
+		D95C23E21BF9E82200A1F892 /* LiquidLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidLoader.swift; sourceTree = "<group>"; };
+		D95C23E31BF9E82200A1F892 /* LiquidUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidUtil.swift; sourceTree = "<group>"; };
+		D95C23E41BF9E82200A1F892 /* LiquittableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquittableCircle.swift; sourceTree = "<group>"; };
+		D95C23E51BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		D95C23E61BF9E82200A1F892 /* UIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
+		D95C23E71BF9E82200A1F892 /* UIView+Grow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Grow.swift"; sourceTree = "<group>"; };
+		D95C23F71BF9F61500A1F892 /* HUD+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HUD+UIViewController.swift"; sourceTree = "<group>"; };
 		D9ACFDE01BF4680E00775A6D /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		D9ACFDE31BF46E5500775A6D /* HotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotController.swift; sourceTree = "<group>"; };
 		D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
@@ -113,6 +141,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D95C23F61BF9F5F900A1F892 /* Extend */,
 				D9B1E75C1BF4A7E700B420FE /* Transform */,
 				D9ACFDDF1BF4680200775A6D /* Global */,
 				D92E0E311BF33EE100569DC7 /* ViewModel */,
@@ -134,7 +163,7 @@
 			children = (
 				D9B1E75F1BF59BB800B420FE /* Article */,
 				D9ACFDEB1BF484EF00775A6D /* Catogaries */,
-				D9ACFDE21BF46E3F00775A6D /* Hot */,
+				D9ACFDE21BF46E3F00775A6D /* Hot(htoController暂时弃用) */,
 				D92E0DE01BEF647700569DC7 /* Layout */,
 			);
 			path = Controller;
@@ -152,6 +181,7 @@
 		D92E0DE51BEF6D9400569DC7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D95C23D91BF9E82200A1F892 /* LiquidLoade */,
 				D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */,
 			);
 			path = Library;
@@ -175,6 +205,34 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D95C23D91BF9E82200A1F892 /* LiquidLoade */ = {
+			isa = PBXGroup;
+			children = (
+				D95C23DB1BF9E82200A1F892 /* ArrayEx.swift */,
+				D95C23DC1BF9E82200A1F892 /* CGPointEx.swift */,
+				D95C23DD1BF9E82200A1F892 /* CGRectEx.swift */,
+				D95C23DE1BF9E82200A1F892 /* CircularGradientLayer.swift */,
+				D95C23DF1BF9E82200A1F892 /* LiquidCircleEffect.swift */,
+				D95C23E01BF9E82200A1F892 /* LiquidLineEffect.swift */,
+				D95C23E11BF9E82200A1F892 /* LiquidLoadEffect.swift */,
+				D95C23E21BF9E82200A1F892 /* LiquidLoader.swift */,
+				D95C23E31BF9E82200A1F892 /* LiquidUtil.swift */,
+				D95C23E41BF9E82200A1F892 /* LiquittableCircle.swift */,
+				D95C23E51BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift */,
+				D95C23E61BF9E82200A1F892 /* UIColorEx.swift */,
+				D95C23E71BF9E82200A1F892 /* UIView+Grow.swift */,
+			);
+			path = LiquidLoade;
+			sourceTree = "<group>";
+		};
+		D95C23F61BF9F5F900A1F892 /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				D95C23F71BF9F61500A1F892 /* HUD+UIViewController.swift */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
 		D9ACFDDF1BF4680200775A6D /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,12 +241,13 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		D9ACFDE21BF46E3F00775A6D /* Hot */ = {
+		D9ACFDE21BF46E3F00775A6D /* Hot(htoController暂时弃用) */ = {
 			isa = PBXGroup;
 			children = (
 				D9ACFDE31BF46E5500775A6D /* HotController.swift */,
 				D9B1E7681BF603C300B420FE /* HotCategoryController.swift */,
 			);
+			name = "Hot(htoController暂时弃用)";
 			path = Hot;
 			sourceTree = "<group>";
 		};
@@ -247,12 +306,25 @@
 		D92E0DC21BEF4C9800569DC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = hwh;
 				TargetAttributes = {
 					D92E0DC91BEF4C9800569DC7 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = GW7ZRB8ABG;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -353,21 +425,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95C23F21BF9E82200A1F892 /* LiquittableCircle.swift in Sources */,
 				D9B1E75E1BF4A80100B420FE /* PresentTransiton.swift in Sources */,
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
+				D95C23F41BF9E82200A1F892 /* UIColorEx.swift in Sources */,
+				D95C23EA1BF9E82200A1F892 /* CGPointEx.swift in Sources */,
 				D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */,
+				D95C23F01BF9E82200A1F892 /* LiquidLoader.swift in Sources */,
+				D95C23EB1BF9E82200A1F892 /* CGRectEx.swift in Sources */,
 				D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */,
+				D95C23ED1BF9E82200A1F892 /* LiquidCircleEffect.swift in Sources */,
+				D95C23EE1BF9E82200A1F892 /* LiquidLineEffect.swift in Sources */,
+				D95C23F11BF9E82200A1F892 /* LiquidUtil.swift in Sources */,
+				D95C23E91BF9E82200A1F892 /* ArrayEx.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
+				D95C23EC1BF9E82200A1F892 /* CircularGradientLayer.swift in Sources */,
 				D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */,
 				D9B1E7611BF59BC700B420FE /* ArticleController.swift in Sources */,
 				D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */,
 				D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */,
+				D95C23EF1BF9E82200A1F892 /* LiquidLoadEffect.swift in Sources */,
 				D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */,
+				D95C23F31BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift in Sources */,
 				D9B1E7631BF5BA3D00B420FE /* ArticleListController.swift in Sources */,
 				D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */,
 				D9B1E7651BF5BC6C00B420FE /* ArticleListRequest.swift in Sources */,
 				D92E0DCE1BEF4C9800569DC7 /* AppDelegate.swift in Sources */,
+				D95C23F81BF9F61500A1F892 /* HUD+UIViewController.swift in Sources */,
+				D95C23F51BF9E82200A1F892 /* UIView+Grow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +496,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -429,9 +516,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "cfde293e-7a42-4a21-80b3-a76b1f56182f";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -454,7 +542,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -467,8 +556,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "cfde293e-7a42-4a21-80b3-a76b1f56182f";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -479,6 +569,9 @@
 			baseConfigurationReference = 6F8B06EC530B8CDDBF7EBFF2 /* Pods-WechatArticle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
@@ -486,10 +579,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = hwh.WechatArticle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -498,6 +593,9 @@
 			baseConfigurationReference = 1EE109E5A0A1E50C600EB3A7 /* Pods-WechatArticle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
@@ -505,10 +603,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = WechatArticle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = hwh.WechatArticle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -24,6 +24,7 @@ public class PresentTransition : NSObject, UIViewControllerTransitioningDelegate
         if isPresenting {
             container.addSubview(fromView)
             container.addSubview(toView)
+            fromView.backgroundColor = UIColor.clearColor()
             
             frame.origin.x = CGRectGetWidth(frame)
             toView.frame = frame

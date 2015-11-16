@@ -46,7 +46,13 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         if let _id = inputDic![InputDictionayKeys.ID.rawValue] as? String {
             request.typeId = Int(_id)!
         }
-
+        
+        
+        delay(2) { () -> () in
+            self.startReqeust()
+        }
+    }
+    func startReqeust() {
         request.request({ [unowned self](data) -> Void in
             log.debug(data)
             self.unpackageResult(data)

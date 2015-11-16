@@ -45,7 +45,7 @@ class ViewController:
      创建视图
      */
     func setUpViews() {
-        print(model)
+        print(model, terminator: "")
     }
     /**
      打开左侧菜单

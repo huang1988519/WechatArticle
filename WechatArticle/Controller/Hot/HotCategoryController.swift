@@ -85,7 +85,8 @@ import Spring
         articleVC.transitioningDelegate = self
         articleVC.inputDic  = node
         
-        self.presentViewController(articleVC, animated: true, completion: nil)
+        self.presentViewController(articleVC, animated: true) { () -> Void in
+        }
 
     }
     
