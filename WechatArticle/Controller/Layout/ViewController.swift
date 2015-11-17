@@ -14,9 +14,12 @@ class ViewController:
     UIViewController,MenuItemSelectDelegate{
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var hotButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
     
-    var hotController: HotController!
-    var catogariesController: CatogariesController!
+    var hotController: HotCategoryController!
+    var settingController : SettingController!
+    var currentController   : UIViewController?
     
     static var token :dispatch_once_t = 0
     let model =  HotViewModel()
@@ -24,22 +27,37 @@ class ViewController:
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hotController = HotController.Nib()
-        catogariesController = CatogariesController.Nib()
+        hotController = HotCategoryController.Nib()
+        settingController = SettingController.Nib()
+        self.addChildViewController(hotController)
+        self.addChildViewController(settingController)
+        
+        showHotController(hotButton)
         
         setUpViews()
     }
     // 切换到 热点视图
-    func showHotController() {
-        self.addChildViewController(hotController)
+    @IBAction func showHotController(sender:UIButton) {
+        hotButton.selected = true
+        settingButton.selected = false
+        settingController.view.removeFromSuperview()
+        
         containerView.addSubview(hotController.view)
-        hotController.didMoveToParentViewController(self)
+        hotController.view.frame = containerView.bounds
+        
+        currentController = hotController
     }
-    // 切换到 全部类目视图
-    func showCategoryController() {
-        self.addChildViewController(catogariesController)
-        containerView.addSubview(catogariesController.view)
-        catogariesController.didMoveToParentViewController(self)
+    // 切换到 设置视图
+    @IBAction func showCategoryController(sender:UIButton) {
+        hotButton.selected = false
+        settingButton.selected = true
+        hotController.view.removeFromSuperview()
+        
+        containerView.addSubview(settingController.view)
+        settingController.view.frame = containerView.bounds
+        currentController = settingController
+        
+        settingController.didMoveToParentViewController(self)
     }
     /**
      创建视图

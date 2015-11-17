@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import MJRefresh
 
 @objc protocol ArticleDelegate {
     func dismissArticle()
@@ -22,47 +23,88 @@ struct Result {
     var list:[[String:AnyObject]]?
 }
 class ArticleListController: UIViewController,UITableViewDataSource,UITableViewDelegate ,UIViewControllerTransitioningDelegate{
-    
+    //MARK: - 实例
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dismissButton: SpringButton!
     
     weak var articleDelegate: ArticleDelegate?
     let request = ArticleListRequest()
     
     var inputDic:[String: AnyObject]?
     var resultModel = Result()
+    var isLoadingMore = false //是否正在加载更多
+    var isRequesting  = false //正在请求网络
     
     lazy var presentAnimation:TransitionZoom = {
         return TransitionZoom()
     }()
     
-    
-    //MARK: -
+
+    //MARK: - 方法
     class func Nib() -> ArticleListController {
         let vc = MainSB().instantiateViewControllerWithIdentifier("ArticleListController")
         return (vc as? ArticleListController)!
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let title = inputDic!["name"] as? String {
+            titleLabel.text = title
+        }else{
+            titleLabel.text = "你愁啥"
+        }
+
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.header = MJRefreshNormalHeader.init { [unowned self]() -> Void in
+            self.startReqeust()
+        }
+        tableView.footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [unowned self]() -> Void in
+            self.loadMore()
+        })
+        
         if let _id = inputDic![InputDictionayKeys.ID.rawValue] as? String {
             request.typeId = Int(_id)!
         }
         
-        startReqeust()
+        tableView.header.beginRefreshing()
     }
     func startReqeust() {
-        
+        isLoadingMore = false
+        requestList(1)
+    }
+    func loadMore() {
+        isLoadingMore = true
+        let page = request.page++
+        requestList(page)
+    }
+    func requestList(page:Int) {
+        if isRequesting {
+            log.warning("正在请求网络，请客官等等好不啦")
+            return
+        }
         self.showHUD()
+        
+        request.page = page
         request.request({ [unowned self](data) -> Void in
             log.debug(data)
             
-            self.hideHUD()
-
+            self.endRefreshAnimation()
             self.unpackageResult(data)
             
-            }) { (msg) -> Void in
-                
+            }) { [unowned self](msg) -> Void in
+                self.endRefreshAnimation()
                 alertWithMsg(msg)
         }
+        isRequesting = true
+    }
+    func endRefreshAnimation() {
+        hideHUD()
+        isRequesting = false
+        tableView.header.endRefreshing()
+        tableView.footer.endRefreshing()
     }
     func unpackageResult(result:AnyObject?) {
         if let dic = result as? [String: AnyObject] {
@@ -73,9 +115,18 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
             
             resultModel.pageCount   = (pages as? Int)!
             resultModel.totalNumber = (numbers as? Int)!
-            resultModel.list        = lists as? [[String :AnyObject]]
+            
+            var arr = [[String:AnyObject]]()
+            if resultModel.list?.isEmpty == false && isLoadingMore == true{
+                arr +=  resultModel.list!
+            }
+            if let list = lists as? [[String :AnyObject]] {
+                arr += list
+            }
+            resultModel.list        = arr
             
             tableView.reloadData()
+            dismissButton.alpha = 1
         }
     }
     //MARK: --
@@ -88,13 +139,18 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let node = resultModel.list![indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        let label = cell.contentView.viewWithTag(100) as? UILabel
-        let imageView = cell.contentView.viewWithTag(101) as? AsyncImageView
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ArticleListCell
         let imageUrl  = NSURL(string: (node["contentImg"] as? String)!)
-        label?.text = node["title"] as? String
-        imageView?.url = imageUrl
-        return cell
+        let avatarUrl = NSURL(string: (node["userLogo"] as? String)!)
+        cell?.contentLabel.text = node["title"] as? String
+        cell?.coverImageView.setUrl(imageUrl!)
+        cell?.avatar.setUrl(avatarUrl!)
+        cell?.ttitleLabel.text = node["userName"] as? String
+        cell?.dateLabel.text = node["date"] as? String
+        
+        cell?.setNeedsUpdateConstraints()
+        cell?.updateConstraintsIfNeeded()
+        return cell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if resultModel.list == nil || resultModel.list?.isEmpty == true {
@@ -102,9 +158,9 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         }
         return (resultModel.list?.count)!
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 250
-    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return  UITableViewAutomaticDimension
+//    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let node = resultModel.list![indexPath.row]
         
@@ -120,5 +176,15 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return presentAnimation.animationControllerForDismissedController(dismissed)
     }
-
+    //MARK: -- UIScrollView Delegate
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.dismissButton.alpha = 1
+        }
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.dismissButton.alpha = 0.1
+        }
+    }
 }

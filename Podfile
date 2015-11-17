@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
+platform :ios, '8.0'
 use_frameworks!
 
 target 'WechatArticle' do
@@ -10,5 +10,9 @@ pod 'RxSwift', '~> 2.0.0-alpha.3'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 pod 'AVOSCloudDynamic'
 pod 'AVOSCloudCrashReportingDynamic'
+pod 'NVActivityIndicatorView'
+pod 'Kingfisher', '~> 1.6.0'
+pod 'MJRefresh'
+# 集成 sharesdk
 end
 

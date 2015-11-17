@@ -9,9 +9,10 @@
 import UIKit
 
 
-class ArticleController: UIViewController {
+class ArticleController: UIViewController ,UIWebViewDelegate{
     @IBOutlet weak var webView: UIWebView!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var inputDic : [String:AnyObject]?
     
     class func Nib() -> ArticleController{
@@ -21,13 +22,27 @@ class ArticleController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let title = inputDic!["title"] as? String {
+            titleLabel.text = title
+        }
         if let _url = inputDic!["url"] as? String {
             let url = NSURL(string: _url)
+
             webView.loadRequest(NSURLRequest(URL: url!))
         }
     }
     @IBAction func dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    //MARK: -- UIWebViewDelegate
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        self.hideHUD()
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+        self.hideHUD()
+    }
+    func webViewDidStartLoad(webView: UIWebView) {
+        self.showHUD()
+    }
+    
 }

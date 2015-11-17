@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Loggerithm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +52,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A0949B05F4F0A189916A42BD430C5D9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>11F0D6740CC183A15F36A9AD84525B09</key>
+		<key>2AFC3722ECBC6A2BB3CBF913AC2E77A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +62,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>46A5DE0A4280FA63F2400C0644C38FF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4FAA0D142BE2768F2C452DCB21B083FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6847254D016329D4A531D34ED2B6DF81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C78611581A9395631F3621465D0728C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E80E4E6B98305FBAA427DAF9BF11151</key>
+		<key>6F975FFC6C5627C127B96721F420BC74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADCFD2E280B18593FB2DBCCCED80EBCC</key>
+		<key>81E33AD1D92C45BEDA147266697C11F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>836C1C4A2E27A56D4B704993E1435115</key>
 		<dict>
 			<key>primary</key>
 			<true/>

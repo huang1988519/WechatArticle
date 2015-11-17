@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 // 获取 主代理
 func App() -> AppDelegate {
     return (UIApplication.sharedApplication().delegate as? AppDelegate)!
@@ -16,6 +16,9 @@ func MainSB() -> UIStoryboard {
     let sb = UIStoryboard(name: "Main", bundle: nil)
     return sb
 }
+
+let cacheManager = KingfisherManager.sharedManager.cache  //图片缓存
+
 // 全局提示框
 func alertWithMsg(msg: String) {
     let alert = UIAlertController(title: "提示", message: msg, preferredStyle: .Alert)

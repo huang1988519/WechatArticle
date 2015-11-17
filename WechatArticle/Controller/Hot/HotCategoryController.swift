@@ -26,35 +26,43 @@ import Spring
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.showHUD(UIColor.whiteColor())
         hotModel.requestList(
-            { () -> () in
+            {[unowned self] () -> () in
+                self.hideHUD()
                 self.collectionView.showLoading()
             }) { [unowned self](result, error) -> Void in
+                self.hideHUD()
                 self.collectionView.hideLoading()
                 
                 if let list = result as? [[String:AnyObject]] {
                     self.resultArray = list
                     self.collectionView.reloadData()
                 }
-    
         }
     }
     
-    var delayValue:CGFloat = 0.08
+    var delayValue:CGFloat = 0.15
     
     //MARK: -- CollectionView Datasource & Delegate
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let node = resultArray![indexPath.row]
 
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-        
+        //标题
         let label = cell.contentView.viewWithTag(100) as? SpringLabel
         label?.text =  node["name"] as? String
-        label?.delay =  CGFloat(delayValue  * CGFloat(indexPath.row))
+        label?.delay =  CGFloat(delayValue  * CGFloat(rand()%10))
         label?.animate()
-        
+        //单字标题
+        let oneLabel = cell.contentView.viewWithTag(102) as? UILabel
+        if label?.text?.isEmpty == false {
+            let index = label?.text!.startIndex.advancedBy(1)
+            oneLabel?.text = label?.text?.substringToIndex(index!)
+        }
+        //icon
         let headerView = cell.contentView.viewWithTag(101) as? SpringView
-        headerView?.delay = CGFloat(delayValue * CGFloat(indexPath.row))
+        headerView?.delay = CGFloat(delayValue * CGFloat(rand()%10))
         headerView?.animate()
         let RRandom = CGFloat(rand()%255)/255.0
         let GRandom = CGFloat(rand()%255)/255.0

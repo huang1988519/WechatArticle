@@ -7,30 +7,45 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-let loadingViewTag = 100
+let loadingViewTag = 1000
 
 extension UIViewController {
-    func showHUD() -> LiquidLoader {
-        
-        let size   = CGSizeMake(80, 80)
-        let center = self.view.center
-        
-        let loader = LiquidLoader(frame: CGRectMake(0, 0, size.width, size.height), effect: .Line(UIColor(hex: "2EA2C2")))
-        loader.tag = loadingViewTag
-        loader.center = center
-        self.view.addSubview(loader)
-        return loader
+    
+    public func showHUD() -> UIView {
+        return showHUD(UIColor.cus_RedColor())
     }
-    func hideHUD() {
-        if let view = self.view.viewWithTag(loadingViewTag) {
+    public func showHUD(color:UIColor) ->UIView {
+        hideHUD()
+        
+        let loading = createHud(color)
+        self.view.addSubview(loading)
+        return loading
+    }
+    
+    public func hideHUD() {
+        if let view = self.view.viewWithTag(loadingViewTag) as? NVActivityIndicatorView{
+            view.stopAnimation()
             view.removeFromSuperview()
         }
     }
-    func addSubViewToSelfView(view:UIView) {
+    internal func addSubViewToSelfView(view:UIView) {
         self.view.addSubview(view)
         if let view = self.view.viewWithTag(loadingViewTag) {
             self.view.bringSubviewToFront(view)
         }
+    }
+    
+    //MARK: --
+    internal func createHud(color:UIColor) -> UIView {
+        let size   = CGSizeMake(80, 80)
+        let center = self.view.center
+        
+        let loading = NVActivityIndicatorView(frame: CGRectMake(0, 0, size.width, size.height), type: .BallClipRotatePulse, color: color, size: size)
+        loading.tag = loadingViewTag
+        loading.center = center
+        loading.startAnimation()
+        return loading
     }
 }
