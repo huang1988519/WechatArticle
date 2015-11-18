@@ -35,6 +35,8 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     var resultModel = Result()
     var isLoadingMore = false //是否正在加载更多
     var isRequesting  = false //正在请求网络
+
+    var lastIndexPath : NSIndexPath?
     
     lazy var presentAnimation:TransitionZoom = {
         return TransitionZoom()
@@ -71,13 +73,19 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         
         tableView.header.beginRefreshing()
     }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if hadReadList.isEmpty == false && lastIndexPath != nil {
+            tableView.reloadRowsAtIndexPaths([lastIndexPath!], withRowAnimation: .Fade)
+        }
+    }
     func startReqeust() {
         isLoadingMore = false
         requestList(1)
     }
     func loadMore() {
         isLoadingMore = true
-        let page = request.page++
+        let page = ++request.page
         requestList(page)
     }
     func requestList(page:Int) {
@@ -135,6 +143,10 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
             _delgate.dismissArticle()
         }
     }
+    func isRead(articleId:String) -> Bool {
+        return hadReadList.contains(articleId)
+//        return  DB.hadRead(articleId)//暂时去掉数据库查询，目测有点卡,需要优化
+    }
     //MARK: --
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let node = resultModel.list![indexPath.row]
@@ -148,6 +160,11 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         cell?.ttitleLabel.text = node["userName"] as? String
         cell?.dateLabel.text = node["date"] as? String
         
+        if isRead((node["id"] as? String)!) {
+            cell?.contentLabel.textColor = UIColor(white: 0.5, alpha: 1)
+        }else{
+            cell?.contentLabel.textColor = UIColor(white: 0.2, alpha: 1)
+        }
         cell?.setNeedsUpdateConstraints()
         cell?.updateConstraintsIfNeeded()
         return cell!
@@ -161,8 +178,9 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
 //    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 //        return  UITableViewAutomaticDimension
 //    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {        
         let node = resultModel.list![indexPath.row]
+        lastIndexPath = indexPath
         
         let detailVC = ArticleController.Nib()
         detailVC.inputDic = node

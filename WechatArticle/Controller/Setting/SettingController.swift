@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingController: UITableViewController {
+class SettingController: UITableViewController{
 
     class func Nib() -> SettingController {
         let sb = MainSB()
@@ -16,5 +16,17 @@ class SettingController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    //MARK: --
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {
+            if let _ = GetUserInfo() {
+                
+            }else{
+                let nav = MainSB().instantiateViewControllerWithIdentifier("LoginControllerNav")
+                App().window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
+            }
+        }
     }
 }

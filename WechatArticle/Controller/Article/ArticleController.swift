@@ -40,9 +40,18 @@ class ArticleController: UIViewController ,UIWebViewDelegate{
     }
     func webViewDidFinishLoad(webView: UIWebView) {
         self.hideHUD()
+        changeReadState()
     }
     func webViewDidStartLoad(webView: UIWebView) {
         self.showHUD()
+    }
+    
+    //MARK: --
+    func changeReadState() {
+        if let id = inputDic!["id"] as? String{
+            hadReadList.append(id)
+//            DB.inertReadRecord(id) //暂时不使用数据库了
+        }
     }
     
 }

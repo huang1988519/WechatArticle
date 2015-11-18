@@ -37,19 +37,18 @@
 		D95C23FE1BFADF3100A1F892 /* Cus+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C23FD1BFADF3100A1F892 /* Cus+UIImageView.swift */; };
 		D95C24011BFAE86A00A1F892 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C24001BFAE86A00A1F892 /* SettingController.swift */; };
 		D95C24041BFB24B900A1F892 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C24031BFB24B900A1F892 /* ArticleListCell.swift */; };
-		D95C24471BFB3F2400A1F892 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24461BFB3F2400A1F892 /* SystemConfiguration.framework */; };
-		D95C24491BFB3F2C00A1F892 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24481BFB3F2C00A1F892 /* QuartzCore.framework */; };
-		D95C244B1BFB3F3600A1F892 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C244A1BFB3F3600A1F892 /* CoreTelephony.framework */; };
-		D95C244D1BFB3F4100A1F892 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C244C1BFB3F4100A1F892 /* libicucore.tbd */; };
-		D95C244F1BFB3F4C00A1F892 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C244E1BFB3F4C00A1F892 /* libz.1.2.5.tbd */; };
-		D95C24511BFB3F5200A1F892 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24501BFB3F5200A1F892 /* Security.framework */; };
-		D95C24531BFB3F5800A1F892 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24521BFB3F5800A1F892 /* JavaScriptCore.framework */; };
-		D95C24551BFB3F5F00A1F892 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24541BFB3F5F00A1F892 /* libstdc++.tbd */; };
 		D95C24571BFB3F6500A1F892 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24561BFB3F6500A1F892 /* CoreText.framework */; };
-		D95C24591BFB3F7A00A1F892 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24581BFB3F7A00A1F892 /* ImageIO.framework */; };
-		D95C245B1BFB3F7F00A1F892 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C245A1BFB3F7F00A1F892 /* AdSupport.framework */; };
-		D95C245D1BFB3F8600A1F892 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C245C1BFB3F8600A1F892 /* libsqlite3.tbd */; };
-		D95C245F1BFB3F8D00A1F892 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C245E1BFB3F8D00A1F892 /* MessageUI.framework */; };
+		D95C24651BFC2AA900A1F892 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24641BFC2AA900A1F892 /* GameKit.framework */; };
+		D95C24671BFC2ABF00A1F892 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24661BFC2ABF00A1F892 /* StoreKit.framework */; };
+		D99AFC781BFC571000CA6FA2 /* HadRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC771BFC571000CA6FA2 /* HadRead.swift */; };
+		D99AFC921BFC58FC00CA6FA2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C245C1BFB3F8600A1F892 /* libsqlite3.tbd */; };
+		D99AFC941BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D99AFC931BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 */; };
+		D99AFC991BFC74BB00CA6FA2 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC971BFC74BB00CA6FA2 /* SQLiteDB.swift */; };
+		D99AFC9A1BFC74BB00CA6FA2 /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC981BFC74BB00CA6FA2 /* SQLTable.swift */; };
+		D99AFC9C1BFC751600CA6FA2 /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC9B1BFC751600CA6FA2 /* String-Extras.swift */; };
+		D99AFC9E1BFC76E100CA6FA2 /* Cus+NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC9D1BFC76E100CA6FA2 /* Cus+NSDate.swift */; };
+		D99AFCA01BFC994C00CA6FA2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */; };
+		D99AFCA21BFCA5C100CA6FA2 /* SwiftCountdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */; };
 		D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE01BF4680E00775A6D /* Tool.swift */; };
 		D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE31BF46E5500775A6D /* HotController.swift */; };
 		D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */; };
@@ -111,6 +110,16 @@
 		D95C245C1BFB3F8600A1F892 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D95C245E1BFB3F8D00A1F892 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D95C24601BFB408300A1F892 /* WechatArticle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WechatArticle-Bridging-Header.h"; sourceTree = "<group>"; };
+		D95C24641BFC2AA900A1F892 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		D95C24661BFC2ABF00A1F892 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D99AFC771BFC571000CA6FA2 /* HadRead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HadRead.swift; sourceTree = "<group>"; };
+		D99AFC931BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WechatArticle.sqlite3; sourceTree = "<group>"; };
+		D99AFC971BFC74BB00CA6FA2 /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		D99AFC981BFC74BB00CA6FA2 /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
+		D99AFC9B1BFC751600CA6FA2 /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
+		D99AFC9D1BFC76E100CA6FA2 /* Cus+NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cus+NSDate.swift"; sourceTree = "<group>"; };
+		D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCountdownButton.swift; sourceTree = "<group>"; };
 		D9ACFDE01BF4680E00775A6D /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
 		D9ACFDE31BF46E5500775A6D /* HotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotController.swift; sourceTree = "<group>"; };
 		D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
@@ -129,19 +138,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95C245D1BFB3F8600A1F892 /* libsqlite3.tbd in Frameworks */,
-				D95C245F1BFB3F8D00A1F892 /* MessageUI.framework in Frameworks */,
-				D95C245B1BFB3F7F00A1F892 /* AdSupport.framework in Frameworks */,
-				D95C24591BFB3F7A00A1F892 /* ImageIO.framework in Frameworks */,
+				D99AFC921BFC58FC00CA6FA2 /* libsqlite3.tbd in Frameworks */,
 				D95C24571BFB3F6500A1F892 /* CoreText.framework in Frameworks */,
-				D95C24551BFB3F5F00A1F892 /* libstdc++.tbd in Frameworks */,
-				D95C24531BFB3F5800A1F892 /* JavaScriptCore.framework in Frameworks */,
-				D95C24511BFB3F5200A1F892 /* Security.framework in Frameworks */,
-				D95C244F1BFB3F4C00A1F892 /* libz.1.2.5.tbd in Frameworks */,
-				D95C244D1BFB3F4100A1F892 /* libicucore.tbd in Frameworks */,
-				D95C244B1BFB3F3600A1F892 /* CoreTelephony.framework in Frameworks */,
-				D95C24491BFB3F2C00A1F892 /* QuartzCore.framework in Frameworks */,
-				D95C24471BFB3F2400A1F892 /* SystemConfiguration.framework in Frameworks */,
+				D95C24671BFC2ABF00A1F892 /* StoreKit.framework in Frameworks */,
+				D95C24651BFC2AA900A1F892 /* GameKit.framework in Frameworks */,
 				BAEFE1429051CEA8D2EC5689 /* Pods_WechatArticle.framework in Frameworks */,
 				D9B1E76E1BF9869B00B420FE /* Crashlytics.framework in Frameworks */,
 				D9B1E76D1BF9869B00B420FE /* Fabric.framework in Frameworks */,
@@ -163,6 +163,8 @@
 		8D327C367679F0FF7DCF8D57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D95C24661BFC2ABF00A1F892 /* StoreKit.framework */,
+				D95C24641BFC2AA900A1F892 /* GameKit.framework */,
 				D95C245E1BFB3F8D00A1F892 /* MessageUI.framework */,
 				D95C245C1BFB3F8600A1F892 /* libsqlite3.tbd */,
 				D95C245A1BFB3F7F00A1F892 /* AdSupport.framework */,
@@ -204,6 +206,7 @@
 		D92E0DCC1BEF4C9800569DC7 /* WechatArticle */ = {
 			isa = PBXGroup;
 			children = (
+				D99AFC761BFC56ED00CA6FA2 /* DB */,
 				D95C23F61BF9F5F900A1F892 /* Extend */,
 				D9B1E75C1BF4A7E700B420FE /* Transform */,
 				D9ACFDDF1BF4680200775A6D /* Global */,
@@ -217,6 +220,7 @@
 				D92E0DD61BEF4C9800569DC7 /* LaunchScreen.storyboard */,
 				D92E0DD91BEF4C9800569DC7 /* Info.plist */,
 				D95C23F91BFA0D6500A1F892 /* Entitlements.plist */,
+				D99AFC931BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 */,
 				D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */,
 				D95C24601BFB408300A1F892 /* WechatArticle-Bridging-Header.h */,
 			);
@@ -240,6 +244,7 @@
 			children = (
 				D92E0DE31BEF649C00569DC7 /* ViewController.swift */,
 				D92E0DE11BEF648900569DC7 /* MenuController.swift */,
+				D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 		D92E0DE51BEF6D9400569DC7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D99AFC961BFC74BB00CA6FA2 /* Sqlite */,
 				D95C23D91BF9E82200A1F892 /* LiquidLoade */,
 				D92E0DE61BEF6D9400569DC7 /* SlideMenuController.swift */,
 			);
@@ -297,6 +303,8 @@
 				D95C23F71BF9F61500A1F892 /* HUD+UIViewController.swift */,
 				D95C23FB1BFAD65E00A1F892 /* Cus+UIColor.swift */,
 				D95C23FD1BFADF3100A1F892 /* Cus+UIImageView.swift */,
+				D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */,
+				D99AFC9D1BFC76E100CA6FA2 /* Cus+NSDate.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -315,6 +323,24 @@
 				D95C24031BFB24B900A1F892 /* ArticleListCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D99AFC761BFC56ED00CA6FA2 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				D99AFC771BFC571000CA6FA2 /* HadRead.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		D99AFC961BFC74BB00CA6FA2 /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				D99AFC9B1BFC751600CA6FA2 /* String-Extras.swift */,
+				D99AFC971BFC74BB00CA6FA2 /* SQLiteDB.swift */,
+				D99AFC981BFC74BB00CA6FA2 /* SQLTable.swift */,
+			);
+			path = Sqlite;
 			sourceTree = "<group>";
 		};
 		D9ACFDDF1BF4680200775A6D /* Global */ = {
@@ -398,13 +424,13 @@
 				TargetAttributes = {
 					D92E0DC91BEF4C9800569DC7 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 924C62GW4F;
+						DevelopmentTeam = GW7ZRB8ABG;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -443,6 +469,7 @@
 				D92E0DD81BEF4C9800569DC7 /* LaunchScreen.storyboard in Resources */,
 				D92E0DD51BEF4C9800569DC7 /* Assets.xcassets in Resources */,
 				D92E0DD31BEF4C9800569DC7 /* Main.storyboard in Resources */,
+				D99AFC941BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,8 +546,11 @@
 				D92E0DE41BEF649C00569DC7 /* ViewController.swift in Sources */,
 				D95C23F41BF9E82200A1F892 /* UIColorEx.swift in Sources */,
 				D95C23EA1BF9E82200A1F892 /* CGPointEx.swift in Sources */,
+				D99AFC9A1BFC74BB00CA6FA2 /* SQLTable.swift in Sources */,
 				D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */,
+				D99AFCA21BFCA5C100CA6FA2 /* SwiftCountdownButton.swift in Sources */,
 				D95C23F01BF9E82200A1F892 /* LiquidLoader.swift in Sources */,
+				D99AFC9E1BFC76E100CA6FA2 /* Cus+NSDate.swift in Sources */,
 				D95C23EB1BF9E82200A1F892 /* CGRectEx.swift in Sources */,
 				D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */,
 				D95C23ED1BF9E82200A1F892 /* LiquidCircleEffect.swift in Sources */,
@@ -528,9 +558,12 @@
 				D95C23FC1BFAD65E00A1F892 /* Cus+UIColor.swift in Sources */,
 				D95C23F11BF9E82200A1F892 /* LiquidUtil.swift in Sources */,
 				D95C23E91BF9E82200A1F892 /* ArrayEx.swift in Sources */,
+				D99AFCA01BFC994C00CA6FA2 /* LoginController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
 				D95C23EC1BF9E82200A1F892 /* CircularGradientLayer.swift in Sources */,
+				D99AFC781BFC571000CA6FA2 /* HadRead.swift in Sources */,
+				D99AFC9C1BFC751600CA6FA2 /* String-Extras.swift in Sources */,
 				D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */,
 				D9B1E7611BF59BC700B420FE /* ArticleController.swift in Sources */,
 				D95C24041BFB24B900A1F892 /* ArticleListCell.swift in Sources */,
@@ -540,6 +573,7 @@
 				D95C23FE1BFADF3100A1F892 /* Cus+UIImageView.swift in Sources */,
 				D95C23EF1BF9E82200A1F892 /* LiquidLoadEffect.swift in Sources */,
 				D92E0E331BF33F0A00569DC7 /* HotViewModel.swift in Sources */,
+				D99AFC991BFC74BB00CA6FA2 /* SQLiteDB.swift in Sources */,
 				D95C23F31BF9E82200A1F892 /* SimpleCircleLiquidEngine.swift in Sources */,
 				D9B1E7631BF5BA3D00B420FE /* ArticleListController.swift in Sources */,
 				D92E0DE71BEF6D9400569DC7 /* SlideMenuController.swift in Sources */,
@@ -589,8 +623,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -612,7 +646,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "cfde293e-7a42-4a21-80b3-a76b1f56182f";
+				PROVISIONING_PROFILE = "87442230-b81a-4f99-8f35-11868f582da9";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -635,8 +669,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -651,7 +685,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "cfde293e-7a42-4a21-80b3-a76b1f56182f";
+				PROVISIONING_PROFILE = "87442230-b81a-4f99-8f35-11868f582da9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -665,7 +699,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
@@ -686,9 +721,9 @@
 					"$(PROJECT_DIR)/WechatArticle/Library/ShareSDK/Extend/WeChatSDK",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79e148b7-0b5f-4ac0-ae86-d1c515905722";
+				PROVISIONING_PROFILE = "87442230-b81a-4f99-8f35-11868f582da9";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatArticle/WechatArticle-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -702,7 +737,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WechatArticle/Library/ReactiveCocoa/build/Debug-iphoneos",
@@ -723,9 +759,9 @@
 					"$(PROJECT_DIR)/WechatArticle/Library/ShareSDK/Extend/WeChatSDK",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwh.WechatArticles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79e148b7-0b5f-4ac0-ae86-d1c515905722";
+				PROVISIONING_PROFILE = "87442230-b81a-4f99-8f35-11868f582da9";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatArticle/WechatArticle-Bridging-Header.h";
 			};
 			name = Release;

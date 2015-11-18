@@ -16,6 +16,7 @@ func MainSB() -> UIStoryboard {
     let sb = UIStoryboard(name: "Main", bundle: nil)
     return sb
 }
+var hadReadList = [String]() //已读列表，内存保存，退出销毁
 
 let cacheManager = KingfisherManager.sharedManager.cache  //图片缓存
 
@@ -37,4 +38,7 @@ extension UIFont {
     }
 }
 
-//MARK: -
+//MARK: -  登录相关
+func GetUserInfo() -> AnyObject? {
+    return nil
+}
