@@ -8,10 +8,12 @@
 
 import UIKit
 import Spring
+import Kingfisher
 
 @objc class HotCategoryController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate, UIViewControllerTransitioningDelegate,ArticleDelegate {
     let hotModel = HotViewModel()
 
+    @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var resultArray :[[String:AnyObject]]?
     lazy var presentAnimation: PresentTransition = {
@@ -40,8 +42,14 @@ import Spring
                     self.collectionView.reloadData()
                 }
         }
+        requestNewestImageFromBing()
     }
-    
+    func requestNewestImageFromBing() {
+        let address = "http://tu.ihuan.me/tu/api/bing/go/"
+        let url     = NSURL(string: address)
+        let placeHolder = UIImage(named: "cover")
+        coverImageView.kf_setImageWithURL(url!, placeholderImage: placeHolder)
+    }
     var delayValue:CGFloat = 0.15
     
     //MARK: -- CollectionView Datasource & Delegate

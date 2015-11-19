@@ -12,63 +12,100 @@ import JLToast
 
 class LoginController: UIViewController {
 
-    @IBOutlet weak var nameTextLabel: UITextField!
-    @IBOutlet weak var phoneTextLabel: UITextField!
+    @IBOutlet weak var emailTextFiled: UITextField!
+    @IBOutlet weak var secretTextFiled: UITextField!
     @IBOutlet weak var checkCodeTextLabel: UITextField!
-    @IBOutlet weak var unReachButton: SwiftCountdownButton!
     
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registButton: RoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.unReachButton.setTitle("second 秒重新获取", forState: .Disabled)
-        self.unReachButton.setTitle("获取验证码", forState: .Normal)
+    }
+    @IBAction func tap(sender: AnyObject) {
+        self.view.endEditing(true)
     }
     @IBAction func dismiss(sender: AnyObject) {
         self.navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func getCheckCode(sender: AnyObject) {
-        if ((phoneTextLabel.text?.isEmpty) == true) {
-            alertWithMsg("手机号在哪里？？")
+    @IBAction func regist(sender: AnyObject) {
+        if emailTextFiled.text?.isEmpty == true {
+            JLToast.makeText("邮箱呢?它能帮助你找回密码").show()
             return
         }
-        let phone = phoneTextLabel.text
-        AVUser.requestMobilePhoneVerify(phone) { [unowned self](sucess, error) -> Void in
-            if sucess {
+        if ((secretTextFiled.text?.isEmpty) == true) {
+            JLToast.makeText("没有密码岂不是很没有安全感？").show()
+            return
+        }
+        let email = emailTextFiled.text
+        let secret = secretTextFiled.text
+        
+        let user = AVUser()
+        user.username = email
+        user.password = secret
+        user.email    = email
+        
+        var error :NSError?
+        let isSuc =  user.signUp(&error)
+        if isSuc == false {
+            JLToast.makeText("注册失败了 \n \((error?.localizedDescription)!)").show()
+        }else{
+            JLToast.makeText("注册成功").show()
+            sendAuthEmailMessage(email!)
+        }
 
-                JLToast.makeText("发送成功").show()
-                self.unReachButton.countdown = true
+    }
+    @IBAction func Login(sender: AnyObject) {
+        if emailTextFiled.text?.isEmpty == true {
+            JLToast.makeText("邮箱呢?它能帮助你找回密码").show()
+            return
+        }
+        if ((secretTextFiled.text?.isEmpty) == true) {
+            JLToast.makeText("没有密码岂不是很没有安全感？").show()
+            return
+        }
+        let email = emailTextFiled.text
+        let secret = secretTextFiled.text
+        do {
+            let user:AVUser! =  try AVUser.logInWithUsername(email, password: secret, error:())
+            if user == nil {
+                JLToast.makeText("登录失败了").show()
             }else{
-                JLToast.makeText("发送失败").show()
-                self.unReachButton.countdown = false
+                JLToast.makeText("登录成功").show()
+            }
+        }catch {
+            if let err = error as? NSError {
+                if err.code == 211 {
+                    JLToast.makeText("没有找到当前用户").show()
+
+                }else{
+                    JLToast.makeText(err.localizedDescription).show()
+                }
+            }else{
+                JLToast.makeText("注册失败").show()
+            }
+            return
+        }
+    }
+    /**
+     发送邮箱确认邮件，但不用等待用户验证完成
+     */
+    func sendAuthEmailMessage(email:String) {
+        AVUser.requestEmailVerify(email) { (completed, error) -> Void in
+            if completed == true {
+                JLToast.makeText("验证邮件已发送").show()
+            }else{
+                log.error("验证邮件发送失败了！！")
             }
         }
     }
-    @IBAction func Login(sender: AnyObject) {
-        if nameTextLabel.text?.isEmpty == true {
-            alertWithMsg("名字呢?")
+    @IBAction func resetPassword(sender: UIButton) {
+        if emailTextFiled.text?.isEmpty == true {
+            JLToast.makeText("不输入邮件怎么找回密码...").show()
             return
         }
-        if ((phoneTextLabel.text?.isEmpty) == true) {
-            alertWithMsg("手机号在哪里？？")
-            return
-        }
-        if ((checkCodeTextLabel.text?.isEmpty) == true) {
-            alertWithMsg("不输入验证码怎么让你过去。。。")
-            return
-        }
-        let name = nameTextLabel.text
-        let phone = phoneTextLabel.text
-        
-        let user = AVUser()
-        user.username = name
-        user.password = phone
-        user.mobilePhoneNumber = phone
-        
-        var error :NSError?
-        user.signUp(&error)
-        if error != nil {
-            alertWithMsg((error?.description)!)
-        }
+        let email = emailTextFiled.text!
+        AVUser.requestPasswordResetForEmailInBackground(email)
+        JLToast.makeText("已发送重置密码邮件，请注意查收").show()
     }
 }

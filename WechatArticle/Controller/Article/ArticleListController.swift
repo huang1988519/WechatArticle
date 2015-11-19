@@ -175,9 +175,6 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         }
         return (resultModel.list?.count)!
     }
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return  UITableViewAutomaticDimension
-//    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {        
         let node = resultModel.list![indexPath.row]
         lastIndexPath = indexPath

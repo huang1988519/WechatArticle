@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         config(launchOptions)
-        
+        log.debug("\n\n User Info")
+        log.debug(AVUser.currentUser().objectId)
+        log.debug("\n\n User Info")
         return true
     }
     

@@ -40,6 +40,10 @@
 		D95C24571BFB3F6500A1F892 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24561BFB3F6500A1F892 /* CoreText.framework */; };
 		D95C24651BFC2AA900A1F892 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24641BFC2AA900A1F892 /* GameKit.framework */; };
 		D95C24671BFC2ABF00A1F892 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C24661BFC2ABF00A1F892 /* StoreKit.framework */; };
+		D98AAF441BFDC80D00078254 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAF431BFDC80D00078254 /* RoundView.swift */; };
+		D98AAF461BFDC84000078254 /* LinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAF451BFDC84000078254 /* LinesView.swift */; };
+		D98AAF481BFDCC2700078254 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAF471BFDCC2700078254 /* RoundButton.swift */; };
+		D98AAF4A1BFE032F00078254 /* Cus+SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAF491BFE032F00078254 /* Cus+SpringView.swift */; };
 		D99AFC781BFC571000CA6FA2 /* HadRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC771BFC571000CA6FA2 /* HadRead.swift */; };
 		D99AFC921BFC58FC00CA6FA2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C245C1BFB3F8600A1F892 /* libsqlite3.tbd */; };
 		D99AFC941BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D99AFC931BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 */; };
@@ -50,7 +54,6 @@
 		D99AFCA01BFC994C00CA6FA2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */; };
 		D99AFCA21BFCA5C100CA6FA2 /* SwiftCountdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */; };
 		D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE01BF4680E00775A6D /* Tool.swift */; };
-		D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDE31BF46E5500775A6D /* HotController.swift */; };
 		D9ACFDED1BF4851400775A6D /* CatogariesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */; };
 		D9B1E75E1BF4A80100B420FE /* PresentTransiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E75D1BF4A80100B420FE /* PresentTransiton.swift */; };
 		D9B1E7611BF59BC700B420FE /* ArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1E7601BF59BC700B420FE /* ArticleController.swift */; };
@@ -112,6 +115,10 @@
 		D95C24601BFB408300A1F892 /* WechatArticle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WechatArticle-Bridging-Header.h"; sourceTree = "<group>"; };
 		D95C24641BFC2AA900A1F892 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D95C24661BFC2ABF00A1F892 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D98AAF431BFDC80D00078254 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		D98AAF451BFDC84000078254 /* LinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesView.swift; sourceTree = "<group>"; };
+		D98AAF471BFDCC2700078254 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		D98AAF491BFE032F00078254 /* Cus+SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Cus+SpringView.swift"; sourceTree = "<group>"; };
 		D99AFC771BFC571000CA6FA2 /* HadRead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HadRead.swift; sourceTree = "<group>"; };
 		D99AFC931BFC6A5C00CA6FA2 /* WechatArticle.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = WechatArticle.sqlite3; sourceTree = "<group>"; };
 		D99AFC971BFC74BB00CA6FA2 /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
@@ -121,7 +128,6 @@
 		D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCountdownButton.swift; sourceTree = "<group>"; };
 		D9ACFDE01BF4680E00775A6D /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
-		D9ACFDE31BF46E5500775A6D /* HotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotController.swift; sourceTree = "<group>"; };
 		D9ACFDEA1BF4774A00775A6D /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
 		D9ACFDEC1BF4851400775A6D /* CatogariesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatogariesController.swift; sourceTree = "<group>"; };
 		D9B1E75D1BF4A80100B420FE /* PresentTransiton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTransiton.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		D92E0DE01BEF647700569DC7 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				D98AAF421BFDC7DE00078254 /* View */,
 				D92E0DE31BEF649C00569DC7 /* ViewController.swift */,
 				D92E0DE11BEF648900569DC7 /* MenuController.swift */,
 				D99AFC9F1BFC994C00CA6FA2 /* LoginController.swift */,
@@ -305,6 +312,7 @@
 				D95C23FD1BFADF3100A1F892 /* Cus+UIImageView.swift */,
 				D99AFCA11BFCA5C100CA6FA2 /* SwiftCountdownButton.swift */,
 				D99AFC9D1BFC76E100CA6FA2 /* Cus+NSDate.swift */,
+				D98AAF491BFE032F00078254 /* Cus+SpringView.swift */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -323,6 +331,16 @@
 				D95C24031BFB24B900A1F892 /* ArticleListCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D98AAF421BFDC7DE00078254 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98AAF431BFDC80D00078254 /* RoundView.swift */,
+				D98AAF471BFDCC2700078254 /* RoundButton.swift */,
+				D98AAF451BFDC84000078254 /* LinesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D99AFC761BFC56ED00CA6FA2 /* DB */ = {
@@ -354,7 +372,6 @@
 		D9ACFDE21BF46E3F00775A6D /* Hot(htoController暂时弃用) */ = {
 			isa = PBXGroup;
 			children = (
-				D9ACFDE31BF46E5500775A6D /* HotController.swift */,
 				D9B1E7681BF603C300B420FE /* HotCategoryController.swift */,
 			);
 			name = "Hot(htoController暂时弃用)";
@@ -549,6 +566,7 @@
 				D99AFC9A1BFC74BB00CA6FA2 /* SQLTable.swift in Sources */,
 				D9B1E7691BF603C300B420FE /* HotCategoryController.swift in Sources */,
 				D99AFCA21BFCA5C100CA6FA2 /* SwiftCountdownButton.swift in Sources */,
+				D98AAF441BFDC80D00078254 /* RoundView.swift in Sources */,
 				D95C23F01BF9E82200A1F892 /* LiquidLoader.swift in Sources */,
 				D99AFC9E1BFC76E100CA6FA2 /* Cus+NSDate.swift in Sources */,
 				D95C23EB1BF9E82200A1F892 /* CGRectEx.swift in Sources */,
@@ -556,8 +574,10 @@
 				D95C23ED1BF9E82200A1F892 /* LiquidCircleEffect.swift in Sources */,
 				D95C23EE1BF9E82200A1F892 /* LiquidLineEffect.swift in Sources */,
 				D95C23FC1BFAD65E00A1F892 /* Cus+UIColor.swift in Sources */,
+				D98AAF4A1BFE032F00078254 /* Cus+SpringView.swift in Sources */,
 				D95C23F11BF9E82200A1F892 /* LiquidUtil.swift in Sources */,
 				D95C23E91BF9E82200A1F892 /* ArrayEx.swift in Sources */,
+				D98AAF461BFDC84000078254 /* LinesView.swift in Sources */,
 				D99AFCA01BFC994C00CA6FA2 /* LoginController.swift in Sources */,
 				D92E0E2E1BF2025300569DC7 /* Request.swift in Sources */,
 				D92E0DE21BEF648900569DC7 /* MenuController.swift in Sources */,
@@ -567,7 +587,7 @@
 				D9ACFDE11BF4680E00775A6D /* Tool.swift in Sources */,
 				D9B1E7611BF59BC700B420FE /* ArticleController.swift in Sources */,
 				D95C24041BFB24B900A1F892 /* ArticleListCell.swift in Sources */,
-				D9ACFDE41BF46E5500775A6D /* HotController.swift in Sources */,
+				D98AAF481BFDCC2700078254 /* RoundButton.swift in Sources */,
 				D95C24011BFAE86A00A1F892 /* SettingController.swift in Sources */,
 				D92E0E301BF3392500569DC7 /* HotRequest.swift in Sources */,
 				D95C23FE1BFADF3100A1F892 /* Cus+UIImageView.swift in Sources */,
@@ -699,7 +719,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Jiabin Li (GW7ZRB8ABG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jiabin Li (7BJKV25ZMB)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

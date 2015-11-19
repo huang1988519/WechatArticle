@@ -43,6 +43,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>微阅读 需要在程序使用期间 访问您的位置，提供天气等功能</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>微阅读 需要在程序使用期间 访问您的位置，提供天气等功能</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SentyMARUKO-Elementary.ttf</string>

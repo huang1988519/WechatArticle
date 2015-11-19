@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import AVOSCloud
 // 获取 主代理
 func App() -> AppDelegate {
     return (UIApplication.sharedApplication().delegate as? AppDelegate)!
@@ -40,5 +41,6 @@ extension UIFont {
 
 //MARK: -  登录相关
 func GetUserInfo() -> AnyObject? {
-    return nil
+    let user = AVUser.currentUser()
+    return user
 }
