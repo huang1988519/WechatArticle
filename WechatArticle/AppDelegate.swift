@@ -22,9 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         config(launchOptions)
-        log.debug("\n\n User Info")
-        log.debug(AVUser.currentUser().objectId)
-        log.debug("\n\n User Info")
+       
         return true
     }
     
@@ -39,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //配置 leanCloud
         AVOSCloud.setApplicationId("qfrsSEumQvfkvyR7gMSXErKg", clientKey: "nTSTQrCGKDFm9zQoexAJHhGW")
         //配置缓存
-        cacheManager.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
-            log.debug("图片缓存已占用:\(size)")
+        ImageCache.defaultCache.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
+            log.debug("图片缓存 %d M", args: size/1024/1024)
         }
         //注册通知
         let types : UIUserNotificationType = [.Alert,.Sound,.Badge]

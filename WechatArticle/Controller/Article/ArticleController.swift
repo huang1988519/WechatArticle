@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Spring
 
-
-class ArticleController: UIViewController ,UIWebViewDelegate{
+class ArticleController: UIViewController ,UIWebViewDelegate,UIScrollViewDelegate{
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dismissButton: SpringButton!
     
     var inputDic : [String:AnyObject]?
     
@@ -29,10 +30,15 @@ class ArticleController: UIViewController ,UIWebViewDelegate{
             let url = NSURL(string: _url)
 
             webView.loadRequest(NSURLRequest(URL: url!))
+            webView.scrollView.delegate = self
         }
     }
     @IBAction func dismiss(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func showMore(sender: AnyObject) {
+        let shareView = ShareViewController.Nib()
+        shareView.show(self)
     }
     //MARK: -- UIWebViewDelegate
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
@@ -41,6 +47,7 @@ class ArticleController: UIViewController ,UIWebViewDelegate{
     func webViewDidFinishLoad(webView: UIWebView) {
         self.hideHUD()
         changeReadState()
+        self.dismissButton.alpha = 1
     }
     func webViewDidStartLoad(webView: UIWebView) {
         self.showHUD()
@@ -53,5 +60,13 @@ class ArticleController: UIViewController ,UIWebViewDelegate{
 //            DB.inertReadRecord(id) //暂时不使用数据库了
         }
     }
-    
+    //MARK: -- ScrollView Delegate 
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.dismissButton.alpha = 1
+        }
+    }
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.dismissButton.alpha = 0.1
+    }
 }

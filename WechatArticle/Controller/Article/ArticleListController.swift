@@ -27,6 +27,7 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dismissButton: SpringButton!
+    @IBOutlet weak var pageLabel: SpringLabel!
     
     weak var articleDelegate: ArticleDelegate?
     let request = ArticleListRequest()
@@ -37,7 +38,15 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     var isRequesting  = false //正在请求网络
 
     var lastIndexPath : NSIndexPath?
-    
+    var currentPage = 1 {
+        didSet {
+            pageLabel.text = "\(currentPage)"
+            pageLabel.animation = "slideUp"
+            pageLabel.damping   = 0.9
+            pageLabel.duration  = 1.5
+            pageLabel.animate()
+        }
+    }
     lazy var presentAnimation:TransitionZoom = {
         return TransitionZoom()
     }()
@@ -81,12 +90,13 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
     }
     func startReqeust() {
         isLoadingMore = false
-        requestList(1)
+        currentPage = 1
+        requestList(currentPage)
     }
     func loadMore() {
         isLoadingMore = true
-        let page = ++request.page
-        requestList(page)
+        currentPage = ++request.page
+        requestList(currentPage)
     }
     func requestList(page:Int) {
         if isRequesting {
@@ -198,8 +208,6 @@ class ArticleListController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        UIView.animateWithDuration(0.5) { () -> Void in
-            self.dismissButton.alpha = 0.1
-        }
+        self.dismissButton.alpha = 0.1
     }
 }

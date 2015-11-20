@@ -34,11 +34,12 @@ import UIKit
 import AVOSCloud
 import CoreLocation
 import JLToast
-
+import Kingfisher
 
 class SettingController: UITableViewController, CLLocationManagerDelegate{
 
     @IBOutlet weak var userCell: UITableViewCell!
+    @IBOutlet weak var cacheCell: UITableViewCell!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var pmLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
@@ -48,11 +49,7 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
     let session = NSURLSession.sharedSession() //请求天气
     
     var timer :NSTimer!
-    var isLogin = false {
-        didSet {
-            refreshUserInfo()
-        }
-    }
+    var isLogin = false
     
     class func Nib() -> SettingController {
         let sb = MainSB()
@@ -75,6 +72,12 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
         //定时器
         timer = NSTimer(timeInterval: time, target: self, selector: Selector("refreshWeather"), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+        
+        //计算图片缓存
+        ImageCache.defaultCache.calculateDiskCacheSizeWithCompletionHandler { [unowned self](size) -> () in
+            log.debug("图片缓存 %d M", args: size/1024/1024)
+            self.cacheCell.detailTextLabel?.text = "\(size/1024/1024) M"
+        }
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,6 +91,8 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
     @IBAction func logout(sender: AnyObject) {
         AVUser.logOut()
         isLogin = false
+        
+        userCell.textLabel?.text = "你好，最美陌生人（点击登录）"
     }
     func refreshUserInfo() {
         let currentUser = AVUser.currentUser()
@@ -191,6 +196,23 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
 
     }
     //MARK: --
+    func clearImageCache() {
+        let alert  = UIAlertController(title: "提示", message: "是否要删除图片缓存\n（温馨提示：如果清楚图片缓存，图片资源会重新从网上下载，消耗流量)" , preferredStyle: .Alert)
+        let cancel = UIAlertAction(title: "取消", style: .Cancel) { (action) -> Void in
+            
+        }
+        let delete = UIAlertAction(title: "删除", style: .Destructive) {[unowned self] (action) -> Void in
+            let strongself = self
+            ImageCache.defaultCache.clearDiskCacheWithCompletionHandler({ () -> () in
+                JLToast.makeText("缓存清理完成").show()
+                strongself.cacheCell.detailTextLabel?.text = "0 M"
+            })
+        }
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    //MARK: --
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             if GetUserInfo() != nil && (isLogin == true) {
@@ -200,5 +222,15 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
                 App().window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
             }
         }
+        if indexPath.row == 1 {
+            if GetUserInfo() == nil {
+                JLToast.makeText("你好,最美陌生人").show()
+                return
+            }
+        }
+        if indexPath.row == 2 {
+            clearImageCache()
+        }
+        
     }
 }

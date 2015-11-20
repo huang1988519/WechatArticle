@@ -25,7 +25,7 @@ class LoginController: UIViewController {
     @IBAction func tap(sender: AnyObject) {
         self.view.endEditing(true)
     }
-    @IBAction func dismiss(sender: AnyObject) {
+    @IBAction func dismiss(sender: AnyObject?) {
         self.navigationController!.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func regist(sender: AnyObject) {
@@ -52,6 +52,7 @@ class LoginController: UIViewController {
         }else{
             JLToast.makeText("注册成功").show()
             sendAuthEmailMessage(email!)
+            self.dismiss(nil)
         }
 
     }
@@ -72,12 +73,12 @@ class LoginController: UIViewController {
                 JLToast.makeText("登录失败了").show()
             }else{
                 JLToast.makeText("登录成功").show()
+                self.dismiss(nil)
             }
         }catch {
             if let err = error as? NSError {
                 if err.code == 211 {
                     JLToast.makeText("没有找到当前用户").show()
-
                 }else{
                     JLToast.makeText(err.localizedDescription).show()
                 }
@@ -91,9 +92,10 @@ class LoginController: UIViewController {
      发送邮箱确认邮件，但不用等待用户验证完成
      */
     func sendAuthEmailMessage(email:String) {
-        AVUser.requestEmailVerify(email) { (completed, error) -> Void in
+        AVUser.requestEmailVerify(email) {[unowned self] (completed, error) -> Void in
             if completed == true {
                 JLToast.makeText("验证邮件已发送").show()
+                self.dismiss(nil)
             }else{
                 log.error("验证邮件发送失败了！！")
             }
@@ -107,5 +109,6 @@ class LoginController: UIViewController {
         let email = emailTextFiled.text!
         AVUser.requestPasswordResetForEmailInBackground(email)
         JLToast.makeText("已发送重置密码邮件，请注意查收").show()
+        self.dismiss(nil)
     }
 }

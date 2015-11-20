@@ -19,7 +19,6 @@ func MainSB() -> UIStoryboard {
 }
 var hadReadList = [String]() //已读列表，内存保存，退出销毁
 
-let cacheManager = KingfisherManager.sharedManager.cache  //图片缓存
 
 // 全局提示框
 func alertWithMsg(msg: String) {
