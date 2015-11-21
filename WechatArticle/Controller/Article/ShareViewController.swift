@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-class ShareViewController: UIViewController {
+class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
 
     var parentVC : UIViewController?
     @IBOutlet weak var shareView: UIView!
@@ -42,7 +42,7 @@ class ShareViewController: UIViewController {
         
         shareViewBottomConstant.constant = 0
         UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [.CurveEaseIn], animations: { () -> Void in
-            self.backView.alpha = 0.5
+            self.backView.alpha = 0.8
             self.view.layoutIfNeeded()
             
             }) { (sucess) -> Void in
@@ -71,7 +71,16 @@ class ShareViewController: UIViewController {
         if collectionView == upCollectionView {
             
         }else{
-            
+            let label = cell.viewWithTag(100) as? UILabel
+            if indexPath.row == 0 {
+                label?.text = "复制连接"
+            }
+            if indexPath.row == 1 {
+                label?.text = "open in safari"
+            }
+            if indexPath.row == 2 {
+                label?.text = "字号"
+            }
         }
         return cell
     }
@@ -80,6 +89,15 @@ class ShareViewController: UIViewController {
             return 1
         }else{
             return 2
+        }
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if collectionView ==  upCollectionView {
+            
+        }else{
+            if indexPath.row == 1 {
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://www.baidu.com")!)
+            }
         }
     }
 }
