@@ -35,8 +35,9 @@ import AVOSCloud
 import CoreLocation
 import JLToast
 import Kingfisher
+import Spring
 
-class SettingController: UITableViewController, CLLocationManagerDelegate{
+class SettingController: UITableViewController, CLLocationManagerDelegate,UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var userCell: UITableViewCell!
     @IBOutlet weak var cacheCell: UITableViewCell!
@@ -50,7 +51,9 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
     
     var timer :NSTimer!
     var isLogin = false
-    
+    lazy var presentAnimation: PresentTransition = {
+        return PresentTransition()
+    }()
     class func Nib() -> SettingController {
         let sb = MainSB()
         return (sb.instantiateViewControllerWithIdentifier("SettingController") as? SettingController)!
@@ -89,10 +92,19 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
      - parameter sender: 按钮
      */
     @IBAction func logout(sender: AnyObject) {
-        AVUser.logOut()
-        isLogin = false
         
-        userCell.textLabel?.text = "你好，最美陌生人（点击登录）"
+        let alert = UIAlertController(title: "提示", message: "确定退出当前用户么", preferredStyle: .Alert)
+        let sure = UIAlertAction(title: "登出", style: .Destructive) {[unowned self] (alert) -> Void in
+            AVUser.logOut()
+            self.isLogin = false
+            self.userCell.textLabel?.text = "你好，最美陌生人（点击登录）"
+        }
+        let cancel = UIAlertAction(title: "取消", style: .Cancel) { (alert) -> Void in
+            
+        }
+        alert.addAction(cancel)
+        alert.addAction(sure)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     func refreshUserInfo() {
         let currentUser = AVUser.currentUser()
@@ -227,10 +239,25 @@ class SettingController: UITableViewController, CLLocationManagerDelegate{
                 JLToast.makeText("你好,最美陌生人").show()
                 return
             }
+            let favoriteVC = favoriteController.Nib()
+            favoriteVC.transitioningDelegate = self
+            self.presentViewController(favoriteVC, animated: true, completion: nil)
         }
         if indexPath.row == 2 {
             clearImageCache()
         }
+        if indexPath.row == 3 {
+            let aboutVC = AboutController.Nib()
+            aboutVC.transitioningDelegate = self
+            self.presentViewController(aboutVC, animated: true, completion: nil)
+        }
         
+    }
+    //MARK: -- Animatin Transition
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentAnimation.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
+    }
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presentAnimation.animationControllerForDismissedController(dismissed)
     }
 }

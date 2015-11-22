@@ -13,7 +13,7 @@ import Kingfisher
 @objc class HotCategoryController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate, UIViewControllerTransitioningDelegate,ArticleDelegate {
     let hotModel = HotViewModel()
 
-    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var coverImageView: SpringImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     var resultArray :[[String:AnyObject]]?
     lazy var presentAnimation: PresentTransition = {
@@ -48,7 +48,16 @@ import Kingfisher
         let address = "http://tu.ihuan.me/tu/api/bing/go/"
         let url     = NSURL(string: address)
         let placeHolder = UIImage(named: "cover")
-        coverImageView.kf_setImageWithURL(url!, placeholderImage: placeHolder)
+        var option :KingfisherOptionsInfo? = nil
+        if isFirstStartUpFromToday() {
+            option = [.Options: KingfisherOptions.ForceRefresh]
+        }else{
+        }
+        coverImageView.kf_setImageWithURL(url!, placeholderImage: nil, optionsInfo: [.Options: KingfisherOptions.ForceRefresh], completionHandler: {[unowned self] (image, error, cacheType, imageURL) -> () in
+            self.coverImageView.startAnimating()
+            self.coverImageView.image = image
+            self.coverImageView.animation = "fadeIn"
+            })
     }
     var delayValue:CGFloat = 0.15
     
@@ -101,7 +110,7 @@ import Kingfisher
         articleVC.transitioningDelegate = self
         articleVC.inputDic  = node
         
-        self.presentViewController(articleVC, animated: true) { () -> Void in
+        self.parentViewController!.presentViewController(articleVC, animated: true) { () -> Void in
         }
 
     }

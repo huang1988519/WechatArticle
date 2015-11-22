@@ -11,13 +11,20 @@ import Spring
 
 class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
 
-    var parentVC : UIViewController?
+    weak var parentVC : UIViewController?
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var shareViewBottomConstant: NSLayoutConstraint!
+    @IBOutlet weak var fontView: UIView!
+    @IBOutlet weak var fontLabel: UILabel!
+    @IBOutlet weak var step: UIStepper!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var upCollectionView: UICollectionView!
     @IBOutlet weak var downCollectionView: UICollectionView!
     
+    var favoriteClickBlock :([String:AnyObject]? -> Void)?
+    var copyClickBlock     :((String?) -> Void)?
+    var openInSafariBlock  :((String?) -> Void)?
+    var changeFontBlock    :((Double?) -> Void)?
     class func Nib() -> ShareViewController {
         let sb = MainSB().instantiateViewControllerWithIdentifier("ShareViewController")
         return (sb as? ShareViewController)!
@@ -26,6 +33,13 @@ class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollecti
         super.viewDidLoad()
         insertBlurView(backView, style: .Light)
         backView.alpha = 0.5
+        shareView.layer.borderWidth = 0.3
+        shareView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        fontView.hidden = true
+        step.value = lastArticleFontSize()
+    }
+    deinit {
+        log.debug("分享界面消除")
     }
     func show(controller: UIViewController) {
         let rootViewController = controller
@@ -49,13 +63,29 @@ class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollecti
                 
         }
     }
-    @IBAction func dismiss(sender: AnyObject) {
+    func showFontView() {
+        fontView.alpha = 0
+        fontView.hidden = false
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.fontView.alpha = 1
+        }
+    }
+    func dismissShareView() {
+        shareViewBottomConstant.constant = -260
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+            }, completion: { (complete) -> Void in
+        })
+    }
+    @IBAction func dismiss(sender: AnyObject?) {
         if let _ = parentVC {
 
             shareViewBottomConstant.constant = -260
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.view.layoutIfNeeded()
                 self.backView.alpha = 0
+                self.fontView.alpha = 0
             }, completion: { (complete) -> Void in
                 self.view.removeFromSuperview()
                 
@@ -63,24 +93,35 @@ class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollecti
                     self.removeFromParentViewController()
                 }
            })
+            
+        }
+    }
+    @IBAction func changeFontSize(sender: UIStepper) {
+        let fontSize = sender.value
+        fontLabel.text = "\(UInt(fontSize))"
+        
+        if let _font = changeFontBlock {
+            _font(fontSize)
         }
     }
     //MARK: -- Collectionview datasource & delegate
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        let cell = (collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as? ShareViewCell)!
         if collectionView == upCollectionView {
-            
+            cell.titleLabel.text = "收藏"
         }else{
-            let label = cell.viewWithTag(100) as? UILabel
             if indexPath.row == 0 {
-                label?.text = "复制连接"
+                cell.titleLabel.text = "复制连接"
             }
             if indexPath.row == 1 {
-                label?.text = "open in safari"
+                cell.imageView.image = UIImage(named: "safari")
+                cell.titleLabel.text = "open in safari"
             }
             if indexPath.row == 2 {
-                label?.text = "字号"
+                cell.imageView.image = UIImage(named: "fontsize")
+                cell.titleLabel.text = "字号"
             }
+            
         }
         return cell
     }
@@ -88,15 +129,31 @@ class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollecti
         if collectionView ==  upCollectionView {
             return 1
         }else{
-            return 2
+            return 3
         }
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
         if collectionView ==  upCollectionView {
-            
+            if let _fav = favoriteClickBlock {
+                dismiss(nil)
+                _fav(nil)
+            }
         }else{
-            if indexPath.row == 1 {
-                UIApplication.sharedApplication().openURL(NSURL(string: "http://www.baidu.com")!)
+            if indexPath.row == 0 {
+                dismiss(nil)
+                if let _cp = copyClickBlock {
+                    _cp(nil)
+                }
+            }else if indexPath.row == 1 {
+                dismiss(nil)
+                if let _open = openInSafariBlock {
+                    _open(nil)
+                }
+            }else if indexPath.row == 2 {
+                dismissShareView()
+                showFontView()
             }
         }
     }

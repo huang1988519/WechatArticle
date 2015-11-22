@@ -49,15 +49,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Timepiece.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>029086F960604A9F282172DEF7EA8A34</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B4245914E7DBED26C60DE4E43FF2766</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,11 +77,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62360E3EABE182CEA331C7ECCDD4F9E3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
@@ -92,7 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B55A6D48D9B22024F301F78B002A1ED4</key>
+		<key>8289795A1A501E7F9818ACD5B468F1BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8ABCF94847E8D8CBCB556D635652C7F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C639DA084A3885902D98A4A7D6F8C1CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2C90E4675142AD0F67FCDD7403CB866</key>
 		<dict>
 			<key>primary</key>
 			<true/>

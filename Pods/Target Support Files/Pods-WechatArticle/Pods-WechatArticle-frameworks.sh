@@ -94,6 +94,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-WechatArticle/NVActivityIndicatorView.framework"
   install_framework "Pods-WechatArticle/SnapKit.framework"
   install_framework "Pods-WechatArticle/Spring.framework"
+  install_framework "Pods-WechatArticle/Timepiece.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/AVOSCloudCrashReportingDynamic/iOS/release-v3.1.4/AVOSCloudCrashReporting/Dynamic/AVOSCloudCrashReporting.framework"
@@ -106,4 +107,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-WechatArticle/NVActivityIndicatorView.framework"
   install_framework "Pods-WechatArticle/SnapKit.framework"
   install_framework "Pods-WechatArticle/Spring.framework"
+  install_framework "Pods-WechatArticle/Timepiece.framework"
 fi

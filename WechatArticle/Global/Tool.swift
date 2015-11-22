@@ -9,6 +9,13 @@
 import UIKit
 import Kingfisher
 import AVOSCloud
+import Timepiece
+
+let FavoriteClassNameKey = "Favorite"
+let ArticleIdKey = "articleId"
+let UserIdKey    = "userId"
+
+
 // 获取 主代理
 func App() -> AppDelegate {
     return (UIApplication.sharedApplication().delegate as? AppDelegate)!
@@ -42,4 +49,34 @@ extension UIFont {
 func GetUserInfo() -> AnyObject? {
     let user = AVUser.currentUser()
     return user
+}
+
+//MARK: -  是否是当天第一次启动app
+func isFirstStartUpFromToday() -> Bool{
+    let key = "isFirstStartup"
+    let day = NSDate().day
+    let lastday = NSUserDefaults.standardUserDefaults().objectForKey(key) as? String
+    
+    if "\(day)" == lastday {
+        log.debug("不是第一天第一次启动")
+        return false
+    }
+    NSUserDefaults.standardUserDefaults().setObject("\(day)", forKey: key)
+    NSUserDefaults.standardUserDefaults().synchronize()
+    log.debug("今天第一次启动，更新大背景图")
+    
+    return true
+}
+func lastArticleFontSize() -> Double {
+    let key = "lastArticleFontSize"
+    let fontsize = NSUserDefaults.standardUserDefaults().doubleForKey(key)
+    if fontsize < 13 {
+        return 13
+    }
+    return fontsize
+}
+func lastArticleFontSize(size: Double) {
+    let key = "lastArticleFontSize"
+    NSUserDefaults.standardUserDefaults().setDouble(size, forKey: key)
+    NSUserDefaults.standardUserDefaults().synchronize()
 }

@@ -15,6 +15,8 @@ pod 'JLToast', '~> 1.3'
 #引入leancloud 社会化分享
 pod 'AVOSCloudDynamic'  # 基本类
 pod 'AVOSCloudCrashReportingDynamic' #崩溃收集
-#pod 'LeanCloudFeedback' # 反馈组件
+
+# NSDate 扩展
+pod "Timepiece"
 end
 
