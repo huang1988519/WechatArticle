@@ -37,6 +37,8 @@ class ShareViewController: UIViewController ,UICollectionViewDelegate,UICollecti
         shareView.layer.borderColor = UIColor.lightGrayColor().CGColor
         fontView.hidden = true
         step.value = lastArticleFontSize()
+        
+        UIDevice.currentDevice().identifierForVendor
     }
     deinit {
         log.debug("分享界面消除")

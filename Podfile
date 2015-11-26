@@ -3,7 +3,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'WechatArticle' do
-pod 'Alamofire', '~> 3.0.0-beta.3'
+pod 'Alamofire'
 pod 'Loggerithm', '~> 1.3'
 pod 'SnapKit'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
